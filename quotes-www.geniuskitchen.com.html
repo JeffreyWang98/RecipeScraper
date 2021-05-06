@@ -1,0 +1,2267 @@
+
+
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (typeof SNI_COMMUNITY_SERVICES == 'undefined') { SNI_COMMUNITY_SERVICES = {}; }
+SNI_COMMUNITY_SERVICES.SITE_NAME = "fooddotcom";
+SNI_COMMUNITY_SERVICES.SITE_CODE = "fdc";
+
+
+window.__gigyaConf = {
+    defaultRegScreenSet: "GK-LoginReg",
+    defaultMobileRegScreenSet: "GK-LoginReg",
+    enabledProviders:'facebook,instagram,google,yahoo',
+    sessionExpiration: 31536000
+};
+
+
+
+
+
+
+
+
+function addToSet(set,arr){arr.forEach(function(){set.add(this)})}function arrayToSet(arr){var s;try{s=new Set(arr),this.length>0&&0===s.size&&addToSet(s,arr)}catch(e){try{s=new Set,addToSet(s,arr)}catch(e){return!1}}return s}var debug=!1,gigya;Date.prototype.addDays||(Date.prototype.addDays=function(days){return this.setDate(this.getDate()+days),this}),Date.prototype.clearTime||(Date.prototype.clearTime=function(){return this.setHours(0,0,0,0),this}),Date.prototype.isSameDay||(Date.prototype.isSameDay=function(compareDate){return this.clearTime(),compareDate.clearTime(),this.getTime()==compareDate.getTime()}),String.prototype.format||(String.prototype.format=function(){var pattern=/\{\d+\}/g,args=1==arguments.length&&arguments[0]instanceof Array?arguments[0]:arguments;return this.replace(pattern,function(capture){return args[capture.match(/\d+/)]})}),String.prototype.padLeft||(String.prototype.padLeft=function(padChar,length){var str=this,len=str.length,pad=[];if(str.length<length)for(;pad.length+len<length;)pad.push(padChar);return pad.join("")+str}),String.prototype.startsWith||(String.prototype.startsWith=function(pattern,flag){var len=pattern.length;return this.length<len?!1:null!==this.substr(0,len).match(new RegExp(pattern,flag))}),String.prototype.endsWith||(String.prototype.endsWith=function(pattern,flag){var len=pattern.length;return this.length<len?!1:null!==this.substr(this.length-len,len).match(new RegExp(pattern,flag))}),String.prototype.contains||(String.prototype.contains=function(pattern,flag){var str=this;if(pattern&&pattern.splice){var matches=!1;return pattern.forEach(function(p,i,a){return null!==str.match(new RegExp(pattern,flag))?(matches=!0,!1):void 0}),matches}return 1==pattern.length&&".!@#$%^:&*()[]{}|/\\".indexOf(pattern)>-1&&(pattern="\\"+pattern+"?"),null!==this.match(new RegExp(pattern,flag))}),String.prototype.has||(String.prototype.has=String.prototype.contains),String.prototype.capitalize||(String.prototype.capitalize=function(){return this.toLowerCase().replace(/\b[a-z]/g,function(letter){return letter.toUpperCase()})}),String.prototype.strip||(String.prototype.strip=function(){return this.trim().replace(/[^\w\s]/g,"").replace(/\s/g,"-").replace(/-+/g,"-")}),String.prototype.toRegExp||(String.prototype.toRegExp=function(){var chars=this.split(""),specialChars=[".","+","{","}","[","]","?","$","^","*","\\","(",")"],pattern=chars.map(function(c){return specialChars.contains(c)?"\\"+c:c});return new RegExp(pattern.join(""),"gi")}),String.prototype.Trim||(String.prototype.Trim=function(pattern){if(this==pattern)return"";if(1==pattern.length&&".!?@#$%^:&*()[]{}|/\\".indexOf(pattern)>-1&&(pattern="\\"+pattern+"?"),pattern){if("object"==typeof pattern)return this.replace(pattern,"");var ptrn="^("+pattern+")?(.*)("+pattern+")?$",re=new RegExp(ptrn),match=this.match(re);return match?match[2]:this}return this.replace(/^\s+|\s+$/,"")}),String.prototype.crunch||(String.prototype.crunch=function(pattern){return this.replace(/\s/g,pattern||"")}),String.prototype.toTitleCase||(String.prototype.toTitleCase=function(){return this.replace(/\w\S*/g,function(txt){return txt.charAt(0).toUpperCase()+txt.substr(1).toLowerCase()})}),String.prototype.toLocaleNumberFormat||(Number.prototype.toLocaleNumberFormat=function(){return this.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")}),String.prototype.toCamelCase||(String.prototype.toCamelCase=function(){return this.replace(/-([a-z])/g,function(g){return g[1].toUpperCase()})}),String.prototype.toURIComponent||(String.prototype.toURIComponent=function(){var str=this,arr=str.split(" "),arrEncoded=$.map(arr,function(word){return encodeURIComponent(word)});return arrEncoded.join("+")}),String.prototype.render||(String.prototype.render=function(data,urlEncodeValues){var key,val,re,str=this;if(data&&"object"==typeof data)for(key in data)val=urlEncodeValues?encodeURIComponent(data[key]):data[key],re=("{{"+key+"}}").toRegExp(),str=str.replace(re,val);return str}),String.isString||(String.isString=function(input){return"string"==typeof input}),String.prototype.hashHex||(String.prototype.hashHex=function(){for(var input=this,hval=2166136261,i=0;i<input.length;i++)hval^=255&input.charCodeAt(i),hval+=(hval<<1)+(hval<<4)+(hval<<7)+(hval<<8)+(hval<<24);return(hval>>>0).toString(16)}),Array.isArray||(Array.isArray=function(arg){return"[object Array]"===Object.prototype.toString.call(arg)}),Array.prototype.filter||(Array.prototype.filter=function(fun){"use strict";if(void 0===this||null===this)throw new TypeError;var t=Object(this),len=t.length>>>0;if("function"!=typeof fun)throw new TypeError;for(var res=[],thisArg=arguments.length>=2?arguments[1]:void 0,i=0;len>i;i++)if(i in t){var val=t[i];fun.call(thisArg,val,i,t)&&res.push(val)}return res}),!Array.prototype.has&&window.Set?(Array.prototype.has=function(item){var s=arrayToSet(this);return s?s.has(item):this.indexOf(item)>-1},Array.prototype.contains||(Array.prototype.contains=Array.prototype.has)):Array.prototype.contains||(Array.prototype.contains=function(predicate){if(null===this)throw new TypeError("Array.prototype.contains called on null or undefined");if(!Array.isArray(this))throw new TypeError("Object must be an array");if("object"==typeof predicate)throw new TypeError("predicate must be a function or a primitive type (string, number, or boolean)");var t=Object(this),res="function"==typeof predicate?t.filter(predicate):t.filter(function(item){return item==predicate});return res.length>0}),Array.prototype.findIndex||(Array.prototype.findIndex=function(predicate){if(null===this)throw new TypeError("Array.prototype.findIndex called on null or undefined");if("function"!=typeof predicate)throw new TypeError("predicate must be a function");for(var value,list=Object(this),length=list.length>>>0,thisArg=arguments[1],i=0;length>i;i++)if(value=list[i],predicate.call(thisArg,value,i,list))return i;return-1}),Array.prototype.add||(Array.prototype.add=function(arr){if(!arr)return this;var self=this,lastIdx=self.length,args=[lastIdx,0].concat(arr);return self.splice.apply(self,args),self}),Array.prototype.pull||(Array.prototype.pull=function(item){var self=this;return self.splice(0,0,item),self}),Array.toArray||(Array.toArray=function(args){return Array.prototype.slice.call(args,0)}),Function.prototype.debounce=function(threshold,execAsap){var timeout,func=this;return function(){function delayed(){execAsap||func.apply(obj,args),timeout=null}var obj=this,args=arguments;timeout?clearTimeout(timeout):execAsap&&func.apply(obj,args),timeout=setTimeout(delayed,threshold||100)}},debug_message=function(){window.log(arguments)},function(win){function logger(name){return function(){log.history=log.history||[];var it=log.history[name]=log.history[name]||[];it.push(arguments),debug&&(win.console&&win.console[name]?win.console[name].apply(console,Array.prototype.slice.call(arguments)):win.console&&win.console.log&&win.console.log.apply(console,Array.prototype.slice.call(arguments)))}}"undefined"==typeof log&&(win.log=function(){log.history=log.history||[],log.history.push(arguments),debug&&this.console&&this.console.log&&console.log.apply(console,Array.prototype.slice.call(arguments))},win.log.info=logger("info"),win.log.error=logger("error"),win.log.warn=logger("warn"))}(window),window.viewLog=function(){var i,history=log.history||[];if(history.length)for(i=0;i<history.length;i++)this.console&&this.console.log&&console.log(history[i]);else this.console&&this.console.log&&console.log("...no debug history...")},SNI=window.SNI||{},SNI.MetaData={},SNI.MetaData.Parameter=function(){var parameters={};this.addParameter=function(key,value){key=key.toUpperCase(),parameters[key]||(parameters[key]=[]),parameters[key].push(value)},this.getParameter=function(key,separator){return key=key.toUpperCase(),parameters[key]?parameters[key].join(separator):void 0},this.getKeys=function(){return parameters},this.setParameter=function(key,value){key=key.toUpperCase(),parameters[key]=[],parameters[key].push(value)},this.resetKeys=function(){parameters={}}},SNI.MetaData.Manager=function(){var m=new SNI.MetaData.Parameter;this.addParameter=m.addParameter,this.getParameter=m.getParameter,this.getKeys=m.getKeys,this.setParameter=m.setParameter,this.resetKeys=m.resetKeys,this.getParameterString=function(key){var s=this.getParameter(key," ");return null==s&&(s=""),s},this.getPageType=function(){return this.getParameterString("Type")},this.getPageTitle=function(){return this.getParameterString("Title")},this.getSite=function(){return this.getParameterString("Site")},this.getSctnId=function(){return this.getParameterString("SctnId")},this.getSctnName=function(){return this.getParameterString("SctnName")},this.getSponsorship=function(){return this.getParameterString("Sponsorship")},this.getAbstract=function(){return this.getParameterString("Abstract")},this.getKeywords=function(){return this.getParameterString("Keywords")},this.getClassification=function(){return this.getParameterString("Classification")},this.getSctnDspName=function(){return this.getParameterString("SctnDspName")},this.getCategoryDspName=function(){return this.getParameterString("CategoryDspName")},this.getShowAbbr=function(){return this.getParameterString("Show_Abbr")},this.getRole=function(){return this.getParameterString("Role")},this.getDetailId=function(){return this.getParameterString("DetailId")},this.getPageNumber=function(){return this.getParameterString("PageNumber")},this.getUniqueId=function(){return this.getParameterString("UniqueId")},this.getUserId=function(){return this.getParameterString("UserId")},this.getUserIdEmail=function(){return this.getParameterString("UserIdEmail")},this.getUserIdCreateDt=function(){return this.getParameterString("UserIdCreateDt")},this.getUserIdVersion=function(){return this.getParameterString("UserIdVersion")},this.getFilters=function(){return this.getParameterString("Filters")},this.getMultimediaFlag=function(){return this.getParameterString("MultimediaFlag")},this.getChefName=function(){return this.getParameterString("ChefName")},this.getMealPart=function(){return this.getParameterString("MealPart")},this.getCuisine=function(){return this.getParameterString("Cuisine")},this.getOccasion=function(){return this.getParameterString("Occasion"," ")},this.getMainIngredient=function(){return this.getParameterString("MainIngredient")},this.getTechnique=function(){return this.getParameterString("Technique"," ")},this.getDish=function(){return this.getParameterString("Dish"," ")},this.getMealType=function(){return this.getParameterString("MealType"," ")},this.getNutrition=function(){return this.getParameterString("Nutrition"," ")},this.getDifficulty=function(){return this.getParameterString("Difficulty"," ")},this.getPrepTime=function(){return this.getParameterString("PrepTime")},this.getSearchTerm=function(){var args=parseQueryString();for(var arg in args){var s=arg.toUpperCase();if("SEARCHSTRING"==s)return args[arg]}return""},this.setMultimediaFlag=function(flag){null!=flag?this.addParameter("MultimediaFlag",flag):this.addParameter("MultimediaFlag","")},this.parseQueryString=function(str){str=str?str:document.location.search;var query="?"==str.charAt(0)?str.substring(1):str,args={};if(query)for(var fields=query.split("&"),f=0;f<fields.length;f++){var field=fields[f].split("=");args[unescape(field[0].replace(/\+/g," "))]=unescape(field[1].replace(/\+/g," "))}return args}};var MetaDataManager=SNI.MetaData.Manager;"undefined"==typeof mdManager&&(mdManager=new MetaDataManager),window.AsyncProxy=function(name){function argsToArray(args){return Array.isArray(args)&&(String.isString(args[0])||null===args[0])?args:Array.toArray(args)}var async=this,isInitialized=!1,queue=[],extensions=[],wait=[];async.name=name,async.init=function(object){var chk,p=this,timeout=24,count=0;p.object=object,isInitialized=!!object,isInitialized?p.exec(object):chk=setInterval(function(){isInitialized||count>timeout?(clearInterval(chk),isInitialized?p.exec(window[p.name]):log("ERROR initializing AsyncProxy for "+this.name)):(p.object=window[p.name],isInitialized=!!p.object,count++)},250)},async.exec=function(object){this.object=object;var extension,item,callback,e=[].concat(extensions),q=[].concat(queue),w=[].concat(wait);for(extensions=null,queue=null,wait=null;extension=e.shift();)this.extend(extension);for(;item=q.shift();)this.forward(item);for(;callback=w.shift();)"function"==typeof callback&&callback()},async.push=async.forward=function(payload){if(!payload)return void log("proxy.{0}: no payload passed to push method.".format(this.name));if(isInitialized){payload=argsToArray(payload);var methodName=payload.shift(),object=this.getObjectOrMethod(methodName),property=object._property,method=object[property]||"function"==typeof object&&object||null;return!!method&&method.apply(object,payload)}queue&&queue.push(payload)},async.extend=function(payload){if(payload&&payload.shift)if(isInitialized){var methodName=payload.shift(),object=this.getObjectOrMethod(methodName,!0),childObject=payload.shift(),property=object._property;if(!Array.isArray(childObject)&&"object"==typeof childObject&&object[property]){object=object[property];var keys=Object.keys(childObject);keys.forEach(function(key){object[key]=childObject[key]})}else object[property]=childObject}else extensions&&extensions.push(payload)},async.wait=function(callback){return callback?isInitialized?callback():void(wait&&wait.push(callback)):void 0}},window.AsyncProxy.prototype.getObjectOrMethod=function(namespace){var property,object=this.object,methodName=namespace.split(".");if(methodName.length>0&&methodName[0].length>0)for(;methodName.length;)property&&("undefined"==typeof object[property]&&(object[property]={}),object=object[property]),property=methodName.shift();return object&&(object._property=property),object},window.AsyncProxy.asyncJq=function(src,callback){proxy.jQuery.push(["getScript",src,callback||function(){log("Done loading ASYNC: "+src)}])},window.AsyncProxy.asyncNext=function(response){if(asyncURLs&&asyncURLs.length){var url=asyncURLs.shift();AsyncProxy.asyncJq(url,AsyncProxy.asyncNext),log("Loading ASYNC: "+url)}},window.AsyncProxy.initProxy=function(name){if("$"==name)return!0;var prox=window.proxy[name];return prox&&window[name]&&(log("proxy: "+name),window.proxy[name].init(window[name])),!0},window.AsyncProxy.register=function(){window.proxy||(window.proxy={});var names=Array.toArray(arguments),callback=names.length>0&&"function"==typeof names[0]&&names.shift();names.forEach(function(name){window.proxy[name]=new AsyncProxy(name)}),callback&&callback()},function(){var proxyCallback=function(){FD={subscribe:function(){var args=Array.prototype.slice.call(arguments,0);proxy.FD.push(["subscribe"].concat(args))}},window.proxy.jQuery.push(["ajaxSetup",{cache:!0}])};window.AsyncProxy.register(proxyCallback,"jQuery","SNI","SniAds","FD","PinUtils","_satellite")}(),window.asyncURLs=[];
+
+
+// initialize the core components
+proxy.FD.push(['Session.init',{
+    MetaData: {
+        environment: 'production',
+        pageType: 'DEFAULT PAGE TYPE',
+        gigyaMode: true
+    },
+
+    environment: 'production',
+    serverURL:'https://www.geniuskitchen.com',
+    imgServerURL:'https://geniuskitchen.sndimg.com',
+    resizableImgServerURL: 'https://img.sndimg.com/food/image/upload/{size_params}/v1',
+    secureServerURL:'https://api.geniuskitchen.com',
+    tvApiUrl: 'https://api.foodnetwork.com/tv-auth/v1',
+    shareServerURL: 'http://share.food.com',
+    aimServerURL: 'http://aim.food.com',
+    ssoControllerURL: 'http://www.scrippscontroller.com/sso/checkcontrollercookie.html',
+    apiServerURL: 'https://www.geniuskitchen.com',
+    RecipeBoxApiURL: 'https://www.geniuskitchen.com/saves',
+    RecipeBoxWrapperURL: 'https://www.geniuskitchen.com'+'/services/mobile/recipebox/wrap-rb',
+    groceryListURL: 'http://recipes.food.com/shopping-list',
+    newsletterURL: 'http://mynewsletters.scrippsnetworks.com/?mode=subscribe&nlbrand=gk&source=0000_FC_HEADER',
+    adServer: 'adsremote.scrippsnetworks.com',
+    reCaptcha: '6LdYrfASAAAAAD4ciUco6uTHK6sQ3s9hjoyppvNc',
+    gigyaURL: 'https://cdns.gigya.com/JS/socialize.js?apikey=3_-YpMMN5PDDnj1ri65ssss6K9Hq9y-y13U1TnjyjKSIxXJOuvE81IhyaP-BOkmb0v',
+    defaultAvatarURL: 'https://img.sndimg.com/food/image/upload/w_45,h_45,q_100,c_thumb/v1/fdc/img/placeholder/avatar.jpg',
+    cookieDomain: '.geniuskitchen.com',
+    reviewSubmissionURL: 'https://www.geniuskitchen.com/services/mobile/recipe/review/submit',
+    IS: { FB: { id: '293868454060703' } },
+
+    Video: {
+        domain: 'https://watch.geniuskitchen.com'
+    },
+
+    saves: {
+        apiUrl: 'https://rb.api.video.snidigital.com/1/',
+        apiKey: 'AwUEJIX8j17uBcBz9OT9qlwj48SxeBX6oINoHTd0'
+    },
+
+    SocialUploader: {
+        apiKey: 'A6x6UxJTDSEenRnl6jrIsz',
+        preSubmitUrl: "/rzfoodservices/web/photo-upload/{assetType}/presubmit",
+        submitUrl: "/rzfoodservices/web/photo-upload/{assetType}/submit",
+        triggerClass: 'add-pictures',
+        pickOptions: {
+            multiple: true
+        },
+        storeOptions: {
+            path: null,
+            transId: null
+        },
+        cloudinaryPathPrefix: '',
+        cloudinaryAvatarPathPrefix: '/food_avatar',
+        cloudinaryImgBasePath: 'img.sndimg.com/food',
+        cloudinaryUrl: 'https://img.sndimg.com/food/image/upload',
+        cloudinaryV1: '/v1/img',
+        cloudinaryFullBucket: '/v1/fdc'
+    },
+
+    useShortUrl: true,
+    initHeader: true
+
+    
+}]);
+</script>
+<!--[if lt IE 9]>
+<script src="https://geniuskitchen.sndimg.com/js/html5shiv.js"></script>
+<![endif]-->
+
+
+
+
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+
+
+
+        <meta name="description" content="Genius Kitchen has a massive collection of recipes that are submitted, rated and reviewed by people who are passionate about food. From international cuisines to quick and easy meal ideas, Genius Kitchen is where you can find what youre craving." />
+        <meta name="sailthru.tags" content="" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-itunes-app" content="app-id=1213089535, affiliate-data=ct=fd-smart-banner&pt=260410" />
+        <meta name="p:domain_verify" content="2f63e78b5ce1412b906e6e406ba61bef" />
+        <meta property="fb:app_id" content="293868454060703" />
+        <meta property="fb:pages" content="118337671518735" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Genius Kitchen - Recipes, Food Ideas And Videos" />
+        <meta property="og:url" content="https://www.geniuskitchen.com" />
+        <meta property="og:description" content="Genius Kitchen has a massive collection of recipes that are submitted, rated and reviewed by people who are passionate about food. From international cuisines to quick and easy meal ideas, Genius Kitchen is where you can find what youre craving." />
+        <meta property="og:image" content="https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png" />
+
+
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+
+<title>Genius Kitchen - Recipes, Food Ideas And Videos</title>
+
+<link rel="image_src" href="https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png" />
+<link rel="shortcut icon" type="image/x-icon" href="https://geniuskitchen.sndimg.com/gk/img/favicon.ico"/>
+
+<link rel="touch-icon" sizes="120x120" href="https://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-precomposed.png" />
+<link rel="touch-icon" sizes="152x152" href="https://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-ipad-precomposed.png" />
+<link rel="touch-icon" sizes="167x167" href="https://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-ipad-retina-precomposed.png" />
+<link rel="touch-icon" sizes="180x180" href="https://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-iphone-retina-precomposed.png" />
+
+<link rel="apple-touch-icon" sizes="120x120" href="https://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-ipad-precomposed.png" />
+<link rel="apple-touch-icon" sizes="167x167" href="https://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-ipad-retina-precomposed.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://geniuskitchen.sndimg.com/gk/img/apple-touch-icon-iphone-retina-precomposed.png" />
+
+
+<link rel="canonical" href="https://www.geniuskitchen.com"/>
+
+
+
+
+
+<link rel="publisher" href="https://plus.google.com/117908044835237955765" />
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://geniuskitchen.sndimg.com/gk/css/gk.min.css?v=201" />
+
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://geniuskitchen.sndimg.com/gk/css/gk-home.min.css?v=201" />
+
+    <style type="text/css">
+
+    </style>
+<style>
+    body {
+        background-image: none;
+    }
+    .fd-logo .ie-logo {
+        display: none;
+    }
+</style>
+
+<!-- Include Page Data JS Configuration -->
+
+
+
+<script type="text/javascript">
+
+    // initialize the page configuration
+    (function() {
+
+        // set up SNI object
+        if ( typeof SNI == 'undefined' ) { SNI = {}; }
+        proxy.SNI.extend([ '', {
+            Config: {
+                name: 'FOODCOM',
+                domain: 'https://www.geniuskitchen.com',
+                imgDomain: 'https://geniuskitchen.sndimg.com',
+                aimDomain: 'http://aim.food.com',
+                shareDomain: 'http://share.food.com',
+                cookieDomain: '.geniuskitchen.com',
+                Video: {
+                    fallbackSiteSectionId: '953690', // Unique for each site and each environment
+                    networkId: '191701', // Shared across all Scripps properties
+                    nielsen: {
+                        apid: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX'
+                    },
+                    playerUrl: {
+                        base: 'http://www.player.video.snidigital.com/vpc/1/6',
+                        css: 'http://www.player.video.snidigital.com/vpc/1/6/css/sni-video.min.css',
+                        skin: 'http://www.player.video.snidigital.com/vpc/1/6/skins/sni-default/sni-default.json',
+                        layout: 'http://www.player.video.snidigital.com/vpc/1/6/skins/sni-default/layout-no-embed.xml'
+                    }
+                }
+            },
+            Community: {
+                xUrlPre: '',
+                aimDomain: 'http://aim.food.com',
+                ur3Domain: 'http://share.food.com',
+                ssoController: 'http://www.scrippscontroller.com/sso/checkcontrollercookie.html',
+
+                UR: {
+                    initialized: true,
+                    noAIM: true,
+
+                    // moved userInfo parameters to FD.Session.init()
+
+                    shareServerUrl: 'http://share.food.com',
+                    globalLoginURL: 'https://www.geniuskitchen.com/login',
+                    globalLogoutBaseUrl: 'https://www.geniuskitchen.com/logout-redirect',
+                    globalRegistrationURL: 'https://www.geniuskitchen.com/login',
+                    globalRegistrationLiteURL: 'https://www.geniuskitchen.com/login',
+                    globalPrivateProfileUrl: 'https://www.geniuskitchen.com/user',
+                    globalUserSettingsUrl: 'https://www.geniuskitchen.com/user',
+                    imageServerUrl: 'https://geniuskitchen.sndimg.com',
+                    previewUrl: 'null'
+                }
+            }
+        }]);
+
+    }());
+
+    // Google Analytics
+    var g_adkeyword="Genius Kitchen - Recipes, Food Ideas And Videos";
+    var g_aduniqueid = '';
+    var g_recipesource= '';
+
+</script>
+
+
+<!-- Include Top JS Tags -->
+
+
+
+
+<script>
+    
+            mdManager = typeof mdManager !== 'undefined' ? mdManager : new MetaDataManager();
+        mdManager.addParameter("CategoryDspName", "HOME");
+        mdManager.addParameter("Classification", "SECTION,HOME,FOODCOM");
+        mdManager.addParameter("SctnDspName", "SECTION");
+        mdManager.addParameter("Site", "FOODCOM");
+        mdManager.addParameter("Sponsorship", "");
+        mdManager.addParameter("type", "HOME");
+        mdManager.addParameter("UniqueId", "6-0-MAIN");
+        mdManager.addParameter("Subdomain", "");
+        mdManager.addParameter("Url", "https://www.geniuskitchen.com");
+        mdManager.addParameter("Title", "Genius Kitchen - Recipes, Food Ideas And Videos");
+        mdManager.addParameter("Version", "beta");
+        mdManager.addParameter("Site Tier", "direct");
+
+    
+</script>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body class="HOME" data-page-type="HOME">
+
+
+<div class="fd-site-wrapper">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- header -->
+    
+
+    <a name="top"></a>
+    <div class="print-only gk-header-print">
+        <div class="smart-logo">
+            <div class="smart-logo-wrap">
+                <div class="smart-logo-inner">
+                    <img data-src="https://img.sndimg.com/food/image/upload/v1/gk-static/gk/img/GK-Logo.jpg" alt="GENIUS KITCHEN" data-h="257" data-w="644" data-quality="30" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fd-header-wrap analytic-box  " data-module="globalHeader">
+        <nav class="navbar navbar-default navbar-static-top " role="navigation" id="fdc-navbar">
+            <div class="container-sm-md">
+                <div class="navbar-header">
+                    <div class="nav-links">
+                        <ul>
+                            <li class="nav-item-burger">
+                                <button class="navbar-toggle" data-target="#gk-burger">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="icon-gk-burger"></i>
+                                </button>
+                            </li>
+                            <li class="nav-item-logo">
+                                <div class="logo">
+                                    <div class="logo-inner">
+                                        
+                                        
+<a href="https://www.geniuskitchen.com" target="_top">
+    
+<svg id="logo-gk" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 465.5 186.8" style="enable-background:new 0 0 465.5 186.8;" xml:space="preserve">
+    <style type="text/css">
+        .st0{fill:#F4CE33;}
+        .st1{fill:#FFFFFF;}
+    </style>
+    <g>
+        <g>
+            <path class="st0" d="M52.1,101.9c2.7,2,6.8,3.1,7.6,3.3c0.5,0.1,0.9,0.2,1.4,0.3c2.5,0.6,4.1,0.3,4.8,3.4
+                c0.8,3.5,1.9,6.8,2.5,10.3l7-1.8c-0.6-1.7-1.1-3.4-1.6-5.1c-0.7-2-0.7-4.2-1.4-6.2c-0.5-1.2,0.9-2.5,1.8-3.4
+                c0.5-0.5,1.1-1,1.7-1.5c4.8-4.2,6.9-9.5,6.3-15.9c0,0-0.1-1.6-0.3-2.4C81.5,82.1,81,80,81,80c-0.8-2-1.4-4.1-2.3-6
+                c-3-6.4-6-12.7-9.1-19.1c-1.2-2.5-2.5-5-3.7-7.4c-0.8,0.2-1.7,0.4-2.5,0.6c2.7,10.7,5.3,21.4,8,32.1c0.5,2,0,3.3-1.4,3.8
+                c-1.4,0.4-2.5-0.2-3-1.8c-2.2-6.5-4.4-12.9-6.6-19.4c-1.4-4.2-2.9-8.5-4.3-12.7c-0.8,0.2-1.7,0.4-2.5,0.6c1,5.7,1.9,11.4,2.9,17.2
+                c0.7,4.1,1.4,8.3,2.1,12.4c0.2,1.3,0.5,2.6,0.6,3.9c0.2,1.5-0.6,2.7-1.9,3c-1.4,0.3-2.5-0.4-3-1.9c-0.3-0.8-0.4-1.6-0.6-2.5
+                c-2.4-9.6-4.8-19.3-7.3-28.9c-0.1-0.5-0.2-0.9-0.3-1.4c-0.8,0.2-1.7,0.4-2.5,0.6c0.2,7.1,0.2,14.2,0.5,21.2
+                c0.2,4.4,0.6,8.8,1.3,13.2c0.5,3.3,1.2,6.4,2.2,8.3C48.5,97.7,49.7,100.1,52.1,101.9z"/>
+        </g>
+        <g>
+            <g>
+                <path class="st0" d="M84.2,156.3c-0.7,0.2-1.1,0.3-1.2,0.3c-23.2,4.8-36.2-15.7-39.6-22.1c-1-1.8-1.9-3.7-2.8-5.6
+                    c-2.9-6.2-6-12.6-12.4-18.7C6.6,89.6,3.6,74.5,2.7,69.4C-4.7,40.2,12.9,10.3,42.1,2.8s59.1,10,66.8,39.2
+                    c0.8,2.5,7.1,23.3-3.9,48.9c-2.9,6.6-2.6,9-2,14.5c0.2,2.2,0.5,5,0.7,8.6c0.2,4.7,0.7,18.9-14.2,22.7c-0.2,0-0.3,0.1-0.5,0.1
+                    c-4.5,1.1-8.5,0.5-12.1-1.7c-8-4.9-10.7-16.6-12.7-25.1l-0.4-1.7c-0.6-2.6,0.9-5.1,3.5-5.8c0,0,0.1,0,0.1,0
+                    c2.6-0.6,5.2,1,5.8,3.6l0.4,1.7c1.5,6.5,3.9,16.3,8.4,19.1c0.8,0.5,2.2,1.1,4.8,0.5c4.9-1.2,7.6-3.7,7.3-13.1
+                    c-0.1-3.2-0.4-5.7-0.6-7.9c-0.7-6.1-1.1-10.4,2.8-19.4c10-23.1,3.7-41.8,3.6-42l-0.1-0.4c-6.2-24.1-30.9-38.7-55-32.4
+                    C20.4,18.3,5.9,43,12.1,67.1l0.1,0.4c0.8,4.2,3.1,17,22.7,35.7c7.7,7.3,11.4,15.2,14.4,21.6c0.9,1.8,1.7,3.6,2.6,5.2
+                    c3.4,6.3,12.9,20.6,29.2,17.2c0.1,0,10.2-2.1,15.8-9.5c1.6-2.1,4.7-2.5,6.8-0.9c2.1,1.6,2.5,4.7,0.9,6.8
+                    C98,152.2,87.8,155.4,84.2,156.3z"/>
+                <path class="st0" d="M85.4,167.4c-9.8,2.5-18,1.8-18.5,1.7c-1.8-0.2-3.2-1.8-3-3.6c0.2-1.8,1.8-3.2,3.6-3
+                    c0.2,0,16.9,1.5,29.5-7.6c1.5-1.1,3.6-0.7,4.6,0.8c1.1,1.5,0.7,3.6-0.8,4.6C96,164,90.5,166.1,85.4,167.4z"/>
+                <path class="st0" d="M87.7,176.3c-9.1,2.3-16.7,1.7-17.2,1.7c-1.8-0.2-3.2-1.8-3-3.6c0.2-1.8,1.8-3.2,3.6-3
+                    c0.2,0,15.6,1.2,27.3-7c1.5-1.1,3.6-0.7,4.6,0.8c1.1,1.5,0.7,3.6-0.8,4.6C97.5,173.1,92.4,175.1,87.7,176.3z"/>
+                <path class="st0" d="M100.1,174.4c-9.3,20.1-26.2,6.8-25.6,6.6C88.5,182.4,100.1,174.4,100.1,174.4z"/>
+            </g>
+        </g>
+    </g>
+    <g>
+        <g>
+            <g>
+                <g>
+                    <path class="st1" d="M133.4,34.9c9.1,0,19,3.8,26.3,10.1c1,0.8,1.1,2,0.2,2.9l-8.5,9.1c-0.9,0.8-2,0.8-2.9,0.1
+                        c-4.1-3.8-8.8-5.2-14.1-5.2c-11.8,0-21.2,9.9-21.2,21.8c0,11.8,9.6,21.5,21.3,21.5c3.1,0,6.4-0.4,9.6-1.7v-6.3h-6.8
+                        c-1.2,0-2-0.9-2-1.9V74.5c0-1.2,0.9-2,2-2H159c1.1,0,1.9,1,1.9,2l0.1,29c0,0.5-0.4,1.4-0.9,1.7c0,0-11.1,7-26.7,7
+                        c-21.5,0-38.7-17-38.7-38.6S112,34.9,133.4,34.9z"/>
+                </g>
+                <g>
+                    <path class="st1" d="M173.2,37.9c0-1.1,0.9-2,2-2h44.6c1.2,0,2,1,2,2v11.8c0,1.1-0.9,2-2,2H190V65h24.6c1.1,0,2,1,2,2v11.8
+                        c0,1.2-1,2-2,2H190v14.6h29.9c1.2,0,2,1,2,2v11.8c0,1.1-0.9,2-2,2h-44.6c-1.2,0-2-1-2-2V37.9z"/>
+                </g>
+                <g>
+                    <path class="st1" d="M233.7,36.7c0-1.1,1-1.9,2-1.9h2.7l43,41.4h0.1V37.9c0-1.1,0.9-2,2-2h12.9c1.1,0,2,1,2,2v72.6
+                        c0,1.1-1,1.9-2,1.9h-1.7c-0.3,0-1.2-0.3-1.4-0.5L250.8,69h-0.1v40.2c0,1.1-0.9,2-2,2h-12.8c-1.1,0-2-1-2-2L233.7,36.7z"/>
+                </g>
+                <g>
+                    <path class="st1" d="M312.4,37.9c0-1.1,1-2,2-2h12.9c1.1,0,2,1,2,2v71.4c0,1.1-1,2-2,2h-12.9c-1.1,0-2-1-2-2V37.9z"/>
+                </g>
+                <g>
+                    <path class="st1" d="M343.2,37.9c0-1.1,1-2,2-2h13.3c1.2,0,2,1,2,2v43.7c0,7.5,5.6,13.6,13.3,13.6c7.8,0,13.5-6,13.5-13.6V37.9
+                        c0-1.1,0.9-2,2-2h13.3c1.1,0,2,1,2,2v44.5c0,16.4-13.8,30-30.8,30c-16.9,0-30.6-13.6-30.6-30V37.9z"/>
+                </g>
+                <g>
+                    <path class="st1" d="M414,101l5.1-8.9c0.9-1.4,2.9-1.2,3.7-0.6c0.4,0.2,8.2,5.9,15.3,5.9c4.3,0,7.4-2.7,7.4-6.5
+                        c0-4.5-3.8-8-11.1-10.9c-9.3-3.7-20.9-10.9-20.9-23.8c0-10.7,8.3-21.5,24.9-21.5c11.2,0,19.8,5.7,23.1,8.1
+                        c1.3,0.8,1.1,2.7,0.6,3.4l-5.5,8.3c-0.8,1.2-2.7,2.2-3.7,1.4c-1-0.5-8.8-6.5-15.4-6.5c-3.9,0-6.8,2.6-6.8,5.5
+                        c0,4,3.2,7,11.8,10.5c8.4,3.3,21.8,9.9,21.8,24.6c0,11.1-9.6,22.3-25.4,22.3c-14,0-21.8-5.8-24.3-8.3
+                        C413.5,103,413.2,102.6,414,101z"/>
+                </g>
+            </g>
+        </g>
+        <g>
+            <path class="st1" d="M173.3,128.4c0-0.7,0.6-1.3,1.3-1.3h4.9c0.7,0,1.3,0.6,1.3,1.3v15.1l14.1-15.9c0.2-0.3,0.6-0.6,1.1-0.6h5.6
+                c1.1,0,1.6,1.2,0.9,2L188,145.5l15.7,18.8c0.6,0.7,0.1,2-1,2h-6.1c-0.6,0-0.9-0.2-1-0.4l-14.6-18v17.1c0,0.7-0.6,1.3-1.3,1.3h-4.9
+                c-0.8,0-1.3-0.6-1.3-1.3V128.4z"/>
+            <path class="st1" d="M209.3,128.1c0-0.6,0.5-1.1,1.1-1.1h5.2c0.6,0,1.1,0.5,1.1,1.1v37.1c0,0.6-0.5,1.1-1.1,1.1h-5.2
+                c-0.6,0-1.1-0.5-1.1-1.1V128.1z"/>
+            <path class="st1" d="M231.5,133.7h-8.6c-0.6,0-1.1-0.5-1.1-1.1v-4.6c0-0.6,0.4-1.1,1.1-1.1h24.5c0.6,0,1.1,0.5,1.1,1.1v4.6
+                c0,0.6-0.4,1.1-1.1,1.1h-8.6v31.4c0,0.6-0.5,1.1-1.1,1.1h-5.2c-0.6,0-1.1-0.5-1.1-1.1V133.7z"/>
+            <path class="st1" d="M270.7,126.5c5.7,0,9.8,1.8,13.6,5.2c0.5,0.4,0.5,1.1,0.1,1.6l-3.4,3.5c-0.4,0.4-1,0.4-1.4,0
+                c-2.4-2.1-5.5-3.3-8.6-3.3c-7.2,0-12.5,6-12.5,13.1c0,7,5.4,12.9,12.6,12.9c3.4,0,6.2-1.3,8.6-3.2c0.4-0.4,1.1-0.3,1.4,0l3.5,3.6
+                c0.4,0.4,0.3,1.1-0.1,1.5c-3.8,3.7-8.6,5.4-13.6,5.4c-11.2,0-20.2-8.9-20.2-20.1C250.4,135.5,259.4,126.5,270.7,126.5z"/>
+            <path class="st1" d="M291,128.1c0-0.6,0.5-1.1,1.1-1.1h5.2c0.6,0,1.1,0.5,1.1,1.1v14.9h18.3v-14.9c0-0.6,0.4-1.1,1.1-1.1h5.2
+                c0.6,0,1.1,0.5,1.1,1.1v37.1c0,0.6-0.5,1.1-1.1,1.1h-5.2c-0.6,0-1.1-0.5-1.1-1.1v-15.5h-18.3v15.5c0,0.6-0.4,1.1-1.1,1.1h-5.2
+                c-0.6,0-1.1-0.5-1.1-1.1V128.1z"/>
+            <path class="st1" d="M333.5,128.1c0-0.6,0.4-1.1,1.1-1.1h22.8c0.6,0,1.1,0.5,1.1,1.1v4.6c0,0.6-0.4,1.1-1.1,1.1h-16.6v9.2h13.8
+                c0.6,0,1.1,0.5,1.1,1.1v4.7c0,0.6-0.5,1.1-1.1,1.1h-13.8v9.8h16.6c0.6,0,1.1,0.5,1.1,1.1v4.6c0,0.6-0.4,1.1-1.1,1.1h-22.8
+                c-0.6,0-1.1-0.5-1.1-1.1V128.1z"/>
+            <path class="st1" d="M365.8,127.5c0-0.6,0.5-1,1.1-1h1.4l23.3,24.8h0.1v-23.2c0-0.6,0.4-1.1,1.1-1.1h5.2c0.6,0,1.1,0.5,1.1,1.1
+                v37.7c0,0.6-0.5,1-1.1,1h-1.3l-23.4-25.7h-0.1v24.1c0,0.6-0.4,1.1-1.1,1.1h-5.1c-0.6,0-1.1-0.5-1.1-1.1V127.5z"/>
+        </g>
+    </g>
+</svg>
+
+</a>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-links nav-links-right">
+                        <ul>
+                            <li class="nav-item-search">
+                                
+                                <button class="navbar-toggle nav-search btn btn-default" data-target="#gk-menu-search" data-align-menu="none" data-mask-target=".fd-header-wrap" title="Find a Recipe">
+                                
+                                    <i class="icon-gk-search"></i>
+                                    <span class="btn-text hidden-xs hidden-sm">FIND A RECIPE</span>
+                                </button>
+                            </li>
+
+
+                            <!-- Authenticated User -->
+                            <li class="nav-item-auth">
+                                <button class="navbar-toggle fd-user-btn" data-target="#gk-menu-auth" data-align-menu="right" data-mask-target=".nav-item-auth .fd-avatar-outer">
+                                    <span class="btn-text fd-greet hidden-xs">Hi, [user]</span>
+                                    <div class="fd-avatar-outer">
+                                        <span class="fd-avatar">
+                                            <img alt="generic user avatar" src="" />
+                                        </span>
+                                    </div>
+                                </button>
+                            </li>
+
+                            <!-- Unauthenticated User -->
+                            <li class="nav-item-unauth">
+                                <button class="navbar-toggle fd-user-icon-btn sso-sign-up" data-align-menu="right" >
+                                    <i class="icon-gk-profile hidden-sm hidden-md hidden-lg"></i>
+                                    <span class="btn-text hidden-xs">Sign In</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div><!-- /header -->
+    <div class="gk-menu">
+    
+        <section class="on " id="gk-top-ribbon" data-top-ribbon-cta="https://www.geniuskitchen.com/ideas/fall-flavors-tasting-pumpkin-spice-maple-pecan-apple-6722">
+            
+            <div class="container-sm-md">
+                <div class="gk-menu-inner">
+                    <div class="top-ribbon-panel">
+                    
+                        
+                        <span class="top-ribbon-title">NEWS: </span>
+                        
+                        
+                        <span class="top-ribbon-msg">PSL vs. Maple? We tasted all the fall products we could get our hands on:</span>
+                        
+                        <a href="https://www.geniuskitchen.com/ideas/fall-flavors-tasting-pumpkin-spice-maple-pecan-apple-6722"><span class="hidden-xs hidden-sm top-ribbon-cta">snack battle royale</span>
+                        <span class="hidden-md top-ribbon-cta">2018 Best of PSL, Maple & More</span></a>
+                    
+                    </div>
+                    <div class="ribbon-aside">
+                    
+                    
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <!-- ./TOP RIBBON MODULE -->
+    </div>
+    <!-- /header -->
+
+
+    
+
+
+<!-- Message Banner -->
+
+
+<div class="fd-container-full container-fluid pushdown-message hidden analytic-box" data-module="shinnyBanner">
+    <div class="fd-container container-fluid">
+        <p>Stumped for dinner? Get our life-saving Dinner Daily newsletter. You (and your stomach) can thank us later!</p>
+        <button class="close close-pushdown-message"><i class="icon-fdc-close"></i></button>
+    </div>
+
+    <div class="fd-container container-fluid fd-email-signup">
+        <input class="fd-email-input" type="text" placeholder="your@email.com">
+        <button class="btn btn-emphasis fd-email-signup-submit">Sign up</button>
+    </div>
+
+    <span class="invalid-email-message"></span>
+</div>
+
+
+<!-- Page Heading -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    // Store the Feature Promo module data.
+    proxy.FD.extend(['Data.featurePromo', {"topRibbon":{"id":577,"prevId":568,"nextId":579,"content":{"label":"NEWS: ","CTA":"snack battle royale","HREF":"https://www.geniuskitchen.com/ideas/fall-flavors-tasting-pumpkin-spice-maple-pecan-apple-6722","mobileCTA":"2018 Best of PSL, Maple \u0026 More"},"text":"PSL vs. Maple? We tasted all the fall products we could get our hands on:","heading":"NEWS: ","startDate":"Sep 14, 2018 12:00:00 AM","endDate":"Sep 16, 2018 12:00:00 AM","desc":"09/14/2018"},"welcomeBanner":{"id":7,"prevId":7,"nextId":7,"headLabel":"Welcome to Genius Kitchen: Dig into our","middleLabel":"63 Top Pinterest Recipes","middleLabelHREF":"http://www.food.com/ideas/popular-pinterest-recipes-6026?c\u003d541097","tailLabel":"and save room for dessert!","startDate":"Aug 24, 2017 12:00:00 AM","desc":"Launch Banner 9/19"},"featureCard":{"id":569,"prevId":567,"nextId":578,"content":[{"label":"TIME IS RUNNING OUT TO VOTE FOR YOUR FAVORITE RECIPE","photo":"https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/upload/editorial/noms-viral-group2.jpg","CTA":"CAST YOUR VOTE","HREF":"https://www.geniuskitchen.com/sweepstakes/golden-noms-vote-6705"},{"label":"KATHERINE SABBATH\u0027S ICONIC POM-POM CAKE","photo":"https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/recipes/53/67/47/DP7ewrIOTfqpDdo8pNLV_Lemon%20Pom%20Pom%20Cake.%20Katherine%20Sabbath.%2013%20of%2015.jpg","CTA":"squidgy","HREF":"https://watch.geniuskitchen.com/show/gknom/genius-noms/5225270/pom-pom-cake/"},{"label":"Cheesy Meatballs \u0026 14 more oven-friendly recipes","photo":"https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/recipes/53/68/43/AnC73kACRNcV5Iv9WfPg_0S9A3862.jpg","CTA":"ONE PAN","HREF":"https://www.geniuskitchen.com/ideas/sheet-pan-dinners-6701?c\u003d627844"},{"photo":""},{"photo":""}],"startDate":"Sep 14, 2018 12:00:00 AM","endDate":"Sep 17, 2018 12:00:00 AM","desc":"9/14"},"dailyPromoCard":{"id":571,"prevId":570,"nextId":572,"content":{"label":"CHERRY SHARK TARTS","photo":"https://img.sndimg.com/food/image/upload/w_560,h_315,c_fill,fl_progressive,q_80/v1/img/recipes/53/62/96/PdqOqAmLTiK1SUc03bvw_5237552_Shark-Week-Cherry-Shark_399.jpg","CTA":"","HREF":"https://watch.geniuskitchen.com/show/gknom/genius-noms/5227656/cherry-shark-tarts/"},"startDate":"Sep 15, 2018 12:00:00 AM","endDate":"Sep 17, 2018 12:00:00 AM","desc":"9/15/18","footerText":""},"gkPromoCard":{"id":135,"prevId":56,"nextId":135,"content":{"label":"","photo":"https://watch.geniuskitchen.com/embed/5304399/dulce-de-leche-llama-cake/?actions\u003dapps","CTA":"ALL SHOWS","HREF":"https://watch.geniuskitchen.com/shows/ "},"startDate":"Nov 24, 2017 12:00:00 AM","desc":"11/24","ribbon":"FROM POP CULTURE BAKING CLASS","title":"Dulce de Leche Llama Cake","intro":""},"COTD":{"recipeId":0,"memberId":0,"memberUrl":"","name":"Wendy\u0027s Offers Free Burgers for Rest of September","url":"https://www.geniuskitchen.com/article/wendy-s-offers-free-burgers-for-rest-of-september-1080","avatarUrl":"https://img.food.com/img/upload/editorial/0-News/2018-09/13-wendys-daves-single_infographic.jpg","id":1266,"day":"Sep 13, 2018 8:00:00 PM","footerText":""},"ROTD":{"recipeId":74821,"recipeUrl":"recipe/linguine-with-sausage-and-kale-74821","title":"Linguine with Sausage \u0026 Kale","photoUrl":"https://img.sndimg.com/food/image/upload/w_555,h_416,fl_progressive,q_80/v1/img/recipes/74/82/1/FgsA1hwR8if2x2BbW6pg_LWK%204%20-%20final_2.jpg","url":"https://www.geniuskitchen.com/ideas/recipe-of-the-day-september-2018-6504?c\u003d621563","memberId":95743,"chefName":"sugarpea","chefUrl":"https://www.geniuskitchen.com/95743","chefAvatarUrl":"https://geniuskitchen.sndimg.com/gk/img/avatar/taco.png","rating":"4.77","reviewCount":"16","cooktime":"20","id":1762,"day":"Sep 14, 2018 8:00:00 PM","footerText":""}}.featureCard.content]);
+</script>
+
+
+
+<section class="gk-feature-promo">
+    <div class="gk-feature-carousel" data-img="https://img.sndimg.com/food/image/upload/q_85,fl_progressive,h_315,w_560,c_fill/v1/img/upload/editorial/noms-viral-group2.jpg" style="background-image: url('https://img.sndimg.com/food/image/upload/q_85,fl_progressive,h_315,w_560,c_fill/v1/img/upload/editorial/noms-viral-group2.jpg');">
+        <div class="header-details">
+            <div class="header-details-inner container">
+                <div class="gk-fp-arrows">
+                    <button class="btn-arrow dir-left"></button>
+                    <button class="btn-arrow dir-right"></button>
+                </div>
+                <div class="title-cta">
+                    <h1><a class="gk-fp-link" href="https://www.geniuskitchen.com/sweepstakes/golden-noms-vote-6705">TIME IS RUNNING OUT TO VOTE FOR YOUR FAVORITE RECIPE</a></h1>
+                    <button class="gk-fp-cta btn-default" data-url="https://www.geniuskitchen.com/sweepstakes/golden-noms-vote-6705">CAST YOUR VOTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gk-feature-tiles container-sm-md">
+        <div class="gk-feature-tiles-inner container-xs">
+    
+                <div class="gk-home-tile" data-img="TIME IS RUNNING OUT TO VOTE FOR YOUR FAVORITE RECIPE" data-title="https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/upload/editorial/noms-viral-group2.jpg" data-cta="CAST YOUR VOTE" data-url="https://www.geniuskitchen.com/sweepstakes/golden-noms-vote-6705">
+                    <div class="gk-tile-inner">
+                        <div class="gk-tile-img">
+                            <div class="inner-wrapper">
+                                <img data-src="https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/upload/editorial/noms-viral-group2.jpg" data-crop-mode="fill" alt="TIME IS RUNNING OUT TO VOTE FOR YOUR FAVORITE RECIPE">
+                            </div>
+                        </div>
+                        <div class="gk-tile-info">
+                            <h6>TIME IS RUNNING OUT TO VOTE FOR YOUR FAVORITE RECIPE</h6>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="gk-home-tile" data-img="KATHERINE SABBATH'S ICONIC POM-POM CAKE" data-title="https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/recipes/53/67/47/DP7ewrIOTfqpDdo8pNLV_Lemon%20Pom%20Pom%20Cake.%20Katherine%20Sabbath.%2013%20of%2015.jpg" data-cta="squidgy" data-url="https://watch.geniuskitchen.com/show/gknom/genius-noms/5225270/pom-pom-cake/">
+                    <div class="gk-tile-inner">
+                        <div class="gk-tile-img">
+                            <div class="inner-wrapper">
+                                <img data-src="https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/recipes/53/67/47/DP7ewrIOTfqpDdo8pNLV_Lemon%20Pom%20Pom%20Cake.%20Katherine%20Sabbath.%2013%20of%2015.jpg" data-crop-mode="fill" alt="KATHERINE SABBATH'S ICONIC POM-POM CAKE">
+                            </div>
+                        </div>
+                        <div class="gk-tile-info">
+                            <h6>KATHERINE SABBATH'S ICONIC POM-POM CAKE</h6>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="gk-home-tile" data-img="Cheesy Meatballs & 14 more oven-friendly recipes" data-title="https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/recipes/53/68/43/AnC73kACRNcV5Iv9WfPg_0S9A3862.jpg" data-cta="ONE PAN" data-url="https://www.geniuskitchen.com/ideas/sheet-pan-dinners-6701?c=627844">
+                    <div class="gk-tile-inner">
+                        <div class="gk-tile-img">
+                            <div class="inner-wrapper">
+                                <img data-src="https://img.sndimg.com/food/image/upload/q_80,fl_progressive,h_437,w_1025,c_fill/v1/img/recipes/53/68/43/AnC73kACRNcV5Iv9WfPg_0S9A3862.jpg" data-crop-mode="fill" alt="Cheesy Meatballs & 14 more oven-friendly recipes">
+                            </div>
+                        </div>
+                        <div class="gk-tile-info">
+                            <h6>Cheesy Meatballs & 14 more oven-friendly recipes</h6>
+                        </div>
+                    </div>
+                </div>
+    
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="banner-af-wrap container-sm-md">
+    
+    
+
+
+
+
+<script type="text/html-template" id="welcome-saved" class="module-welcome-banner">
+    <p>You recently saved <a href="{{= it.canonicalUrl}}">{{= it.title}}</a>. Would you like to <span class="{{= it.class}}"><a href="{{= it.canonicalUrl}}?ftab=reviews#activity-feed">review</a> or </span><a href="{{= it.canonicalUrl}}">add a photo</a>?</p>
+</script>
+
+<script type="text/html-template" id="welcome-viewed" class="module-welcome-banner">
+    <p>Last time you were here you looked at <a href="{{= it.url}}">{{= it.title}}</a>. Would you like to <a class="rb-save" data-alt-dest="{{= it.url}}" data-recipe-id="{{= it.id}}" href="{{= it.url}}">save it</a>?</p>
+</script>
+
+<script type="text/html-template" id="welcome-default" class="module-welcome-banner">
+    <p>{{= it.headLabel}}&nbsp;{{? it.midLabelHref}}<a href="{{= it.midLabelHref}}">{{?}}{{= it.midLabel}}{{? it.midLabelHref}}</a>{{?}}&nbsp;{{= it.tailLabel}}</p>
+</script>
+
+<script type="text/html-template" id="welcome-loading" class="module-welcome-banner">
+    <div class="fd-spinner"><i class="icon-fdc-loading"></i><span>Loading&hellip;</span></div>
+</script>
+
+<div class="gk-welcome-banner container-fluid">
+    <div class="fd-spinner">
+        <i class="icon-fdc-loading"></i>
+        <span>Loading&hellip;</span>
+    </div>
+</div>
+
+
+
+
+    
+    
+
+<section class="gk-af-sum container-fluid">
+    <div class="gk-af-sum-header">
+        
+<svg class="svg-sparkle" xmlns="http://www.w3.org/2000/svg" width="60" height="59.966" viewBox="0 0 60 59.9663"><defs><style>.cls-1{fill:#f4ce34}</style></defs><title></title><path id="left" class="cls-1 left" d="M21.224 3.201c-.355 2.874-.613 5.763-1.09 8.617-.567 3.396-1.326 6.76-1.986 10.142a5.768 5.768 0 0 1-3.837 4.647 60.835 60.835 0 0 1-8.265 1.974c-1.967.356-3.993.374-5.998.656a38.476 38.476 0 0 1 11.884 3.395c3.576 1.74 6.028 4.261 6.632 8.365.722 4.877 1.594 9.73 2.402 14.592a1.308 1.308 0 0 0 .576.96c.213-1.546.375-3.1.651-4.633.697-3.857 1.497-7.696 2.159-11.558a10.216 10.216 0 0 1 5.865-7.568 29.88 29.88 0 0 1 11.473-3.301 1.6 1.6 0 0 0 .994-.356c-2.121-.17-4.26-.232-6.363-.538a45.841 45.841 0 0 1-6.951-1.43 6.842 6.842 0 0 1-4.793-5.326A102.722 102.722 0 0 1 21.8 4.647c-.03-.503-.148-1.001-.226-1.5-.117.018-.235.035-.35.054"/><path id="right-bottom" class="cls-1 right-bottom" d="M40.808 34.928c-.459 2.577-.976 5.148-1.358 7.737-.341 2.32-1.836 3.355-3.935 3.767-1.329.26-2.68.401-4.472.662 1.374.33 2.355.519 3.308.807 2.88.871 4.895 2.516 5.301 5.715a28.988 28.988 0 0 0 1.485 6.28c.124-.885.24-1.772.375-2.654.08-.535.201-1.062.288-1.595.988-5.947 2.584-7.517 8.596-8.58-1.267-.191-2.533-.379-3.801-.574-2.54-.387-3.595-1.263-4.128-3.756-.465-2.172-.75-4.382-1.117-6.573-.073-.434-.164-.866-.246-1.296l-.295.06"/><path id="right-top" class="cls-1 right-top" d="M50.802 25.119c.32-1.74.736-3.47.941-5.221.627-5.349 3.462-6.568 7.578-7.278a4.067 4.067 0 0 0 .679-.285c-1.268-.195-2.337-.353-3.402-.53-3.069-.514-3.947-1.285-4.561-4.306-.495-2.43-.844-4.89-1.501-7.408-.106.45-.232.898-.312 1.356-.408 2.32-.82 4.641-1.202 6.964a3.455 3.455 0 0 1-2.726 2.949c-1.568.408-3.178.664-4.922 1.018 1.222.365 2.354.644 3.44 1.041 2.39.877 4.074 2.387 4.46 5.038.273 1.865.615 3.723.934 5.58.063.363.168.716.252 1.076z"/></svg>
+
+        <h6 class="gk-af-sum-title">what's fresh?</h6>
+        
+<svg class="svg-sparkle" xmlns="http://www.w3.org/2000/svg" width="60" height="59.966" viewBox="0 0 60 59.9663"><defs><style>.cls-1{fill:#f4ce34}</style></defs><title></title><path id="left" class="cls-1 left" d="M21.224 3.201c-.355 2.874-.613 5.763-1.09 8.617-.567 3.396-1.326 6.76-1.986 10.142a5.768 5.768 0 0 1-3.837 4.647 60.835 60.835 0 0 1-8.265 1.974c-1.967.356-3.993.374-5.998.656a38.476 38.476 0 0 1 11.884 3.395c3.576 1.74 6.028 4.261 6.632 8.365.722 4.877 1.594 9.73 2.402 14.592a1.308 1.308 0 0 0 .576.96c.213-1.546.375-3.1.651-4.633.697-3.857 1.497-7.696 2.159-11.558a10.216 10.216 0 0 1 5.865-7.568 29.88 29.88 0 0 1 11.473-3.301 1.6 1.6 0 0 0 .994-.356c-2.121-.17-4.26-.232-6.363-.538a45.841 45.841 0 0 1-6.951-1.43 6.842 6.842 0 0 1-4.793-5.326A102.722 102.722 0 0 1 21.8 4.647c-.03-.503-.148-1.001-.226-1.5-.117.018-.235.035-.35.054"/><path id="right-bottom" class="cls-1 right-bottom" d="M40.808 34.928c-.459 2.577-.976 5.148-1.358 7.737-.341 2.32-1.836 3.355-3.935 3.767-1.329.26-2.68.401-4.472.662 1.374.33 2.355.519 3.308.807 2.88.871 4.895 2.516 5.301 5.715a28.988 28.988 0 0 0 1.485 6.28c.124-.885.24-1.772.375-2.654.08-.535.201-1.062.288-1.595.988-5.947 2.584-7.517 8.596-8.58-1.267-.191-2.533-.379-3.801-.574-2.54-.387-3.595-1.263-4.128-3.756-.465-2.172-.75-4.382-1.117-6.573-.073-.434-.164-.866-.246-1.296l-.295.06"/><path id="right-top" class="cls-1 right-top" d="M50.802 25.119c.32-1.74.736-3.47.941-5.221.627-5.349 3.462-6.568 7.578-7.278a4.067 4.067 0 0 0 .679-.285c-1.268-.195-2.337-.353-3.402-.53-3.069-.514-3.947-1.285-4.561-4.306-.495-2.43-.844-4.89-1.501-7.408-.106.45-.232.898-.312 1.356-.408 2.32-.82 4.641-1.202 6.964a3.455 3.455 0 0 1-2.726 2.949c-1.568.408-3.178.664-4.922 1.018 1.222.365 2.354.644 3.44 1.041 2.39.877 4.074 2.387 4.46 5.038.273 1.865.615 3.723.934 5.58.063.363.168.716.252 1.076z"/></svg>
+
+    </div>
+    
+    <div class="gk-af-sum-feed">
+    </div>
+    <h6 class="gk-af-sum-footer"><a href="/activity">view all</a></h6>
+</section>
+
+
+
+<script type="text/html-template" class="module-gk-aa" id="feed-item">
+    <div class="gk-aa-item">
+        <div class="gk-aa-item-icon">
+            <i class="icon-gk-{{= it.iconType}}"></i>
+        </div>
+        <div class="gk-aa-item-info">
+            <ul>
+                <li class="gk-aa-item-heading">
+                    {{? it.feedType === 'page'}}
+                    <div class="gk-af-avatar">
+                        <span class="fd-avatar sm"><a href="{{= it.memberProfileUrl}}"><img data-src="{{= it.memberAvatar}}" data-target=".gk-af-avatar" alt="{{= it.memberName}}"></a></span>
+                    </div>
+                    {{?}}
+                    <ul class="gk-aa-item-heading-info">
+                        <li><a href="{{= it.memberProfileUrl}}">{{= it.memberName}}</a> {{= it.action}} {{? it.type === 'follow'}}<a href="{{= it.followedProfileUrl}}">{{= it.followedName}}</a>{{??}}<a href="{{= it.recipeUrl}}">{{= it.recipeTitle}}</a>{{?}}.</li>
+                        <li class="gk-aa-timestamp">{{= it.date}}</li>
+                    </ul>
+                </li>
+                {{? it.rating && it.rating > 0}}
+                <li class="gk-aa-item-rating">
+                    <div class="rating-wrap">
+                        <div class="fd-rating">
+                            <div class="five-star">
+                                  <span class="fd-rating-percent" style="width: {{= it.ratingPercentage}}%;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {{?}}
+                {{? typeof it.text !== 'undefined'}}
+                <li class="gk-aa-item-text">{{= it.text}}</li>
+                {{?}}
+                {{? (it.type === 'photo' && !!it.url) || !!it.photo }}
+                <li class="gk-aa-item-photo">
+                    <div class="inner-wrapper">
+                        <img data-src="{{= ( it.type === 'photo' ) ? it.url : it.photo }}" data-crop-mode="fill" data-target=".gk-aa-item-photo">
+                    </div>
+                </li>
+                {{?}}
+                {{? it.counts}}
+                <li class="gk-aa-like-reply">
+                    <ul>
+                        <li>
+                            <a class="gk-aa-like {{= it.counts.liked}}" href="#" data-item-type="{{= it.type}}" data-item-id="{{= it.id}}" data-recipe-id="{{= it.recipeId}}"><i class="icon-gk-like"></i> Like</a>
+                            <span class="gk-aa-count">{{? it.counts.like > 0}}{{= it.counts.like}}{{?}}</span>
+                        </li>
+                        <li>
+                            <a href="{{= it.shareUrl}}"><i class="icon-gk-comment"></i> Repl{{? it.replyTotal > 0}}ies{{??}}y{{?}}</a>
+                            <span class="gk-aa-count">{{? it.replyTotal > 0}}{{= it.replyTotal}}{{?}}</span>
+                        </li>
+                    </ul>
+                </li>
+                {{?}}
+            </ul>
+        </div>
+    </div>
+</script>
+
+
+</section>
+
+
+
+    
+
+
+
+
+<section class="gk-home-midsection container-sm-md">
+    
+    
+
+
+
+
+
+
+<section class="gk-daily-promos clearfix col-xs-8 col-sm-21 col-md-18">
+
+    
+
+
+<div class="gk-card cotd col-sm-7">
+    <a href="https://www.geniuskitchen.com/article/wendy-s-offers-free-burgers-for-rest-of-september-1080">
+        <div class="gk-card-img">
+            <div class="inner-wrapper">
+                <img data-src="https://img.food.com/img/upload/editorial/0-News/2018-09/13-wendys-daves-single_infographic.jpg" data-target=".gk-daily-promos .gk-card-img" alt="">
+            </div>
+        </div>
+        <div class="gk-card-text">
+            <div class="gk-card-ribbon">
+                <div class="rib-text">news of the day</div>
+                <div class="rib-tail"></div>
+            </div>
+            <h5>Wendy's Offers Free Burgers for Rest of September</h5>
+        </div>
+    </a>
+    
+</div>
+
+
+
+
+    
+
+
+<div class="gk-card rotd col-sm-7">
+    <a href="https://www.geniuskitchen.com/ideas/recipe-of-the-day-september-2018-6504?c=621563">
+        <div class="gk-card-img">
+            <div class="inner-wrapper">
+                <img data-src="https://img.sndimg.com/food/image/upload/w_555,h_416,fl_progressive,q_80/v1/img/recipes/74/82/1/FgsA1hwR8if2x2BbW6pg_LWK%204%20-%20final_2.jpg" data-target=".gk-daily-promos .gk-card-img" alt="Recipe of the Day: Linguine with Sausage & Kale">
+            </div>
+        </div>
+        <div class="gk-card-text">
+            <div class="gk-card-ribbon">
+                <div class="rib-text">recipe of the day</div>
+                <div class="rib-tail"></div>
+            </div>
+            <h5>Linguine with Sausage & Kale</h5>
+        </div>
+    </a>
+    
+</div>
+
+
+    
+
+
+<div class="gk-card col-sm-7">
+    <a href="https://watch.geniuskitchen.com/show/gknom/genius-noms/5227656/cherry-shark-tarts/">
+        <div class="gk-card-img">
+            <div class="inner-wrapper">
+                <img data-src="https://img.sndimg.com/food/image/upload/w_560,h_315,c_fill,fl_progressive,q_80/v1/img/recipes/53/62/96/PdqOqAmLTiK1SUc03bvw_5237552_Shark-Week-Cherry-Shark_399.jpg" data-target=".gk-daily-promos .gk-card-img" alt="">
+            </div>
+        </div>
+        <div class="gk-card-text">
+            <span><i class="icon-fdc-play"></i></span>
+            <h5>CHERRY SHARK TARTS</h5>
+        </div>
+    </a>
+    
+</div>
+
+
+</section>
+
+
+    
+    <div class="col-xs-8 col-sm-21 col-md-9 col-md-offset-1">
+        
+
+
+<div class="dfp-bigbox">
+    <div class="dfp-ad-wrap">
+        <div class="dfp" data-dfp-type="dfp_bigbox"></div>
+        <span class="ad-label">Advertisement</span>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+
+    
+
+
+
+<section id="watch" class="gk-video-promo">
+    <div class="gk-video-promo-body">
+        <div class="gk-video-container container-sm">
+            <div class="gk-video-embed">
+                <div class="inner-wrapper">
+                    <iframe allow="autoplay" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" data-src="https://watch.geniuskitchen.com/embed/5304399/dulce-de-leche-llama-cake/?actions=apps"></iframe>
+                </div>
+            </div>
+            <div class="gk-video-info">
+                <div class="gk-video-ribbon">
+                    <div class="rib-text">FROM POP CULTURE BAKING CLASS</div>
+                    <div class="rib-tail"></div>
+                </div>
+                <div class="title-wrap">
+                    <h6><span class="gk-title-intro"></span>&nbsp;<span class="gk-title-main"></span></h6>
+                    <h2>Dulce de Leche Llama Cake</h2>
+                </div>
+                <a href="https://watch.geniuskitchen.com/shows/ " class="btn">ALL SHOWS</a>
+            </div>
+        </div>
+    </div>
+    <div class="gk-video-promo-footer clearfix">
+        <div class="content-wrap clearfix">
+
+            
+<svg id="device-icons-wrapper" class="gk-device-icons" xmlns="http://www.w3.org/2000/svg" width="207.5996" height="54.808" viewBox="0 0 207.5996 54.808">
+    <g id="outlines" style="opacity: 1">
+        <path d="M206.6,57.75h-8.1a2.24,2.24,0,0,1-1.6309-.6211l-.0928-.1133A2.7521,2.7521,0,0,1,196.25,55.5V37.2a2.2449,2.2449,0,0,1,.62-1.6309l.1152-.0947A2.7687,2.7687,0,0,1,198.5,34.95h8.1a2.0922,2.0922,0,0,1,1.7246.7334A2.7634,2.7634,0,0,1,208.85,37.2V55.5a2.242,2.242,0,0,1-.6191,1.63l-.1143.0938A2.7524,2.7524,0,0,1,206.6,57.75Z" transform="translate(-1.25 -3.25)"/>
+        <path d="M186.7,57.75H164.9A1.8524,1.8524,0,0,1,163.05,55.9V26.8A1.8524,1.8524,0,0,1,164.9,24.95h21.8a1.8522,1.8522,0,0,1,1.85,1.85V55.9A1.8522,1.8522,0,0,1,186.7,57.75Z" transform="translate(-1.25 -3.25)"/>
+        <path d="M150.95,54.45H92.55V18.9a1.9321,1.9321,0,0,1,1.75-1.95h54.9a1.7972,1.7972,0,0,1,1.75,1.95Z" transform="translate(-1.25 -3.25)"/>
+        <path d="M82,49.95H3.4A1.9952,1.9952,0,0,1,1.25,48.1V5.1A1.9951,1.9951,0,0,1,3.4,3.25H82A1.9951,1.9951,0,0,1,84.15,5.1v43A1.9952,1.9952,0,0,1,82,49.95Z" transform="translate(-1.25 -3.25)"/>
+    </g>
+    <g id="device-icons">
+        <g id="television">
+            <path id="television-bezel" d="M5.1,48.14H80.4v-42H5.1Zm-1.7,2.1A1.2657,1.2657,0,0,1,2,49.14v-44a1.2657,1.2657,0,0,1,1.4-1.1H82a1.2657,1.2657,0,0,1,1.4,1.1v44a1.2657,1.2657,0,0,1-1.4,1.1Zm44.9.8v4h5.5a.7887.7887,0,0,1,.8.8v1.3a.86.86,0,0,1-.8.8h-23a.7887.7887,0,0,1-.8-.8v-1.3a.86.86,0,0,1,.8-.8h5.5v-4Z" transform="translate(-1.25 -3.25)" style="fill: #fefefe"/>
+            <polygon id="television-screen" points="3.75 44.79 79.05 44.79 79.05 2.79 3.75 2.79 3.75 44.79" style="fill: #010202"/>
+        </g>
+        <g id="laptop">
+            <path id="laptop-bezel" d="M86,55.14h28.6c.5,0,.6,0,.7.2.1.1.2.2.3.2h12.2c.1,0,.3-.1.3-.2.1-.1.2-.2.7-.2h28.6a2.9021,2.9021,0,0,1-2.9,2.9H89A3.1344,3.1344,0,0,1,86,55.14Zm7.3-.4V18.94a1.1991,1.1991,0,0,1,1-1.2h54.9c.6,0,1,.5,1,1.2v35.8Z" transform="translate(-1.25 -3.25)" style="fill: #fefefe"/>
+            <polygon id="laptop-screen" points="93.65 49.69 147.35 49.69 147.35 17.29 93.65 17.29 93.65 49.69" style="fill: #010202"/>
+        </g>
+        <g id="tablet">
+            <path id="tablet-bezel" d="M165.6257,55.258h20.4v-26.8h-20.4Zm10.9,1.4a.7.7,0,1,1-.7-.7.6835.6835,0,0,1,.7.7Zm11.2.3v-30.1a1.11,1.11,0,0,0-1.1-1.1h-21.7a1.11,1.11,0,0,0-1.1,1.1v30.1a1.11,1.11,0,0,0,1.1,1.1h21.8a1.2722,1.2722,0,0,0,1-1.1Z" transform="translate(-1.25 -3.25)" style="fill: #fefefe"/>
+            <polygon id="tablet-screen" points="164.376 52.008 184.776 52.008 184.776 25.208 164.376 25.208 164.376 52.008" style="fill: #010202"/>
+        </g>
+        <g id="phone">
+            <path id="phone-bezel" d="M197.6182,54.7636v-16.4h9.9v16.8h-9.9Zm3.8-17.5c-.2,0-.3-.1-.3-.2v-.1c0-.1.1-.2.3-.2h2.5c.2,0,.3.1.3.2v.1c0,.1-.1.2-.3.2Zm1.1,20a.7.7,0,1,1,.7-.7c.1.4-.3.7-.7.7Zm5.6-.8v-19.3a2.0969,2.0969,0,0,0-.4-1.1,1.5039,1.5039,0,0,0-1.1-.4h-8.1a2.0969,2.0969,0,0,0-1.1.4,1.5039,1.5039,0,0,0-.4,1.1v19.3a2.0969,2.0969,0,0,0,.4,1.1,1.5039,1.5039,0,0,0,1.1.4h8.1a2.097,2.097,0,0,0,1.1-.4,1.5039,1.5039,0,0,0,.4-1.1Z" transform="translate(-1.25 -3.25)" style="fill: #fefefe"/>
+            <polygon id="phone-screen" points="206.268 51.514 206.268 35.514 206.268 35.114 196.368 35.114 196.368 35.514 196.368 51.514 196.368 51.914 206.268 51.914 206.268 51.514" style="fill: #010202"/>
+        </g>
+    </g>
+</svg>
+
+
+            <p><a href="/app" target="_blank" >get the genius kitchen app.</a></p>
+            <p>&nbsp;Watch on your iPhone, iPad, Apple TV, Android, Roku or Fire TV.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<div class="target-trending-recipes full-width" data-title="Trending Recipes"></div>
+
+
+<div class="target-new-recipes full-width" data-title="Newest Recipes"></div>
+
+
+
+
+<script type="text/html-template" id="new-recipes-container" class="module-new-recipes">
+    <div class="gk-new-recipes container-sm-md clearfix">
+        <div class="module-heading">
+            <h2>{{= it.moduleTitle}}</h2>
+            <p class="view-all-top hidden-xs"><a href="{{= it.viewAllLink}}">View All&nbsp;<i class="icon-fdc-navigate-right"></i></a></p>
+        </div>
+
+        <div class="tile-container">
+            <div class="fd-spinner">
+                <i class="icon-fdc-loading"></i>
+                <span>Loading&hellip;</span>
+            </div>
+        </div>
+
+        <p class="view-all-bottom hidden-sm hidden-md hidden-lg"><a href="{{= it.viewAllLink}}">View All&nbsp;<i class="icon-fdc-navigate-right"></i></a></p>
+    </div>
+</script>
+
+<script type="text/html-template" id="basic-tile" class="module-new-recipes">
+    <div class="gk-tile-basic">
+        <div class="gk-tile-img">
+            <div class="inner-wrapper">
+                <a href="{{= it.record_url}}">
+                    <img data-src="{{= it.recipe_photo_url}}" data-crop-mode="fill" data-target=".gk-new-recipes .gk-tile-img" alt="{{= it.main_title}}">
+                </a>
+            </div>
+        </div>
+        <h3><a href="{{= it.record_url}}">{{= it.main_title}}</a></h3>
+        <h4>by <a href="{{= it.userProfileUrl}}">{{= it.main_username}}</a></h4>
+        {{? Number( it.main_rating ) !== 0 }}
+        <div class="rating-wrap">
+            <div class="fd-rating" data-rating="{{= it.main_rating}}">
+                <a href="{{= it.record_url}}#activity-feed">
+                    <div class="five-star">
+                        <span class="fd-rating-percent" style="width: {{= it.ratingPercentage}}%;"></span>
+                    </div>
+                </a>
+            </div>
+            <span class="review-count"><a href="{{= it.record_url}}#activity-feed">({{= it.main_num_ratings}})</a></span>
+        </div>
+        {{??}}
+        <p><a href="{{= it.record_url}}">Make this recipe</a></p>
+        {{?}}
+    </div>
+</script>
+
+
+
+</div>
+
+<div class="fd-overlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer -->
+
+
+
+<script>
+
+proxy._satellite.wait(function () { AsyncProxy.initProxy('SNI'); })
+
+</script>
+
+
+<script type="text/javascript" src="https://geniuskitchen.sndimg.com/gk/js/lib-bundle.min.js?v=201" onload="AsyncProxy.initProxy('jQuery');" ></script>
+
+
+<script type="text/javascript" src="https://code.adsales.snidigital.com/conf/ads-config.min.js" ></script>
+
+
+<script type="text/javascript" src="https://code.adsales.snidigital.com/lib/2/sni-ads.min.js" onload="AsyncProxy.initProxy('SniAds');" ></script>
+
+
+<script type="text/javascript" src="https://cdns.gigya.com/JS/socialize.js?apikey=3_-YpMMN5PDDnj1ri65ssss6K9Hq9y-y13U1TnjyjKSIxXJOuvE81IhyaP-BOkmb0v" defer></script>
+
+
+<script type="text/javascript" src="https://geniuskitchen.sndimg.com/gk/js/core.min.js?v=201" onload="AsyncProxy.initProxy('FD');" defer></script>
+
+
+<script type="text/javascript" src="//analytics.snidigital.com/gk/076e416a6caa07234c15d9bd371ee9e19eef88d3/satelliteLib-bcf5f78965434ee359ed8599c3c4e330702525b7.js" onload="AsyncProxy.initProxy('_satellite');" ></script>
+
+
+<script type="text/javascript">
+
+    asyncURLs.push('https://js-sec.indexww.com/ht/ls-scripps.js');
+
+    // loads external libs
+    AsyncProxy.asyncNext(asyncURLs);
+
+</script>
+
+
+
+
+
+<div class="footer-search-tags" style="background-image: url('https://img.sndimg.com/food/image/upload/q_92,fl_progressive,h_296,w_1200,c_fill/v1/img/recipes/16/21/90/ey16YmaKQvS0QePS2gkZ_0S9A4121.jpg')">
+    <div class="container-sm-md">
+        <form method="get" action="https://www.geniuskitchen.com/search">
+            <div class="footer-search-block">
+                <div class="footer-search-label"><label for="footer-search-field">I WANT TO MAKE
+                </label></div>
+                <div class="footer-search-field">
+                    <div class="footer-search-field-input-wrapper">
+                        <input type="text" id="footer-search-field" placeholder="Search here or try our suggestions below"/>
+                    </div>
+                </div>
+            </div>
+            <ul class="footer-search-tags-block">
+
+                
+
+                        <li data-token="open-suggestions" class="view-more">View Suggestions</li>
+                        <li data-token="close-suggestions" class="close-suggestions">
+                            <i class="icon-fdc-close"></i>
+                        </li>
+
+                
+                            <li data-token="https://www.geniuskitchen.com/ideas/top-shrimp-recipes-6566?c=572970"><i class="icon-fdc-sparkles"></i>top shrimp recipes</li>
+                
+                            <li data-token="https://www.geniuskitchen.com/ideas/healthy-lunch-box-ideas-6050">healthy lunchbox ideas</li>
+                
+                            <li data-token="https://www.geniuskitchen.com/ideas/quick-easy-chicken-dinners-6013">quick & easy chicken dinners</li>
+                
+                            <li data-token="https://www.geniuskitchen.com/ideas/make-ahead-slow-cooker-meals-6421">slow-cooker recipes for fall</li>
+                
+                            <li data-token="https://www.geniuskitchen.com/ideas/favorite-banana-bread-recipes-6003">best-ever banana breads</li>
+                
+                
+
+            </ul>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer-links">
+            <div class="v-site-footer-links-wrap">
+                <div class="site-footer-links-wrapper">
+                    <div class="site-footer-backToTop">
+                        <a href="#" target="_top" onclick="window.scrollTo(0,0); return false;">
+                            BACK TO TOP
+                        </a>
+                    </div>
+                    <div class="site-footer-social">
+                        <a class="facebook" title="Facebook" href="https://www.facebook.com/GeniusKitchen" target="_blank" data-clicktrack="true">
+                            <i class="icon-gk icon-gk-facebook"></i>
+                        </a>
+                        <a class="instagram" title="Instagram" href="https://www.instagram.com/geniuskitchen" target="_blank" data-clicktrack="true">
+                            <i class="icon-gk icon-gk-instagram"></i>
+                        </a>
+                        <a class="pinterest" title="Pinterest" href="https://www.pinterest.com/geniuskitchen" target="_blank" data-clicktrack="true">
+                            <i class="icon-gk icon-gk-pinterest"></i>
+                        </a>
+                        <a class="twitter" title="Twitter" href="https://www.twitter.com/GeniusKitchen" target="_blank" data-clicktrack="true">
+                            <i class="icon-gk icon-gk-twitter"></i>
+                        </a>
+                        <a class="youtube" title="Youtube" href="https://www.youtube.com/geniuskitchen" target="_blank" data-clicktrack="true">
+                            <i class="icon-gk icon-gk-youtube"></i>
+                        </a>
+                        <a class="email" href="http://mynewsletters.scrippsnetworks.com/?mode=subscribe&nlbrand=gk&source=0000_FC_HEADER" target="_blank" data-clicktrack="true"><i class="icon-gk icon-gk-email"></i></a>
+                    </div>
+                </div>
+                <ul class="footer-nav-links">
+
+                    
+                    <li><a target="_self" href="http://www.geniuskitchen.com/topics">All Categories
+                    </a></li>
+                    
+                    <li><a target="_self" href="http://mynewsletters.scrippsnetworks.com/?mode=subscribe&nlbrand=gk&source=0000_FC_HEADER">Newsletters
+                    </a></li>
+                    
+                    <li><a target="_self" href="http://www.geniuskitchen.com/html-sitemap">Site Map
+                    </a></li>
+                    
+                    <li><a target="_self" href="http://www.geniuskitchen.com/how-to/about-us-31">About Us
+                    </a></li>
+                    
+                    <li><a target="_blank" href="http://geniuskitchen.custhelp.com">Contact Us
+                    </a></li>
+                    
+
+                </ul>
+            </div>
+        </div>
+        <div class="site-footer-info">
+            <div class="site-footer-copyright">
+                <div class="drop-list-module">
+                    <span id="see-all-snd" class="drop-list-handle">See all Scripps Networks Digital <i class="icon-fdc-navigate-up"></i>
+                        <ul class="drop-list drop-list-target">
+                            <li><a target="_blank" href="http://www.hgtv.com">HGTV</a></li>
+                            <li><a target="_blank" href="http://www.diynetwork.com">DIY Network</a></li>
+                            <li><a target="_blank" href="http://www.foodnetwork.com">Food Network</a></li>
+                            <li><a target="_blank" href="http://www.cookingchanneltv.com">Cooking Channel</a></li>
+                            <li><a target="_blank" href="http://www.travelchannel.com">Travel Channel</a></li>
+                            <li><a target="_blank" href="http://www.gactv.com">Great American Country</a></li>
+                            <li><a target="_blank" href="http://hgtv.pl/">HGTV Poland</a></li>
+                            <li><a target="_blank" href="https://spoonuniversity.com/">Spoon University</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <p>&copy; 2018 <a href="http://www.scrippsnetworks.com" rel="Scripps Networks" target="_blank">Scripps Networks</a>, LLC.</p>
+                <p>All Rights Reserved.</p>
+            </div>
+            <ul class="footer-nav-links">
+                <li><a href="http://www.scrippsnetworksdigital.com" target="_blank">Advertise With Us</a></li>
+                <li><a href="http://info.evidon.com/pub_info/1212?v=1&nt=1&nw=false" target="_blank">AdChoices</a></li>
+                <li><a href="http://www.scrippsnetworksinteractive.com/privacy-policy" target="_blank">Privacy Policy</a></li>
+                <li><a href="http://www.scrippsnetworksinteractive.com/terms-of-use" target="_blank">Terms of Use</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script type="text/javascript" src="https://geniuskitchen.sndimg.com/gk/js/gk-home.min.js?v=201" ></script>
+
+<script type="text/javascript">
+proxy._satellite.push(['pageBottom']);
+
+// Omniture parameters
+proxy.FD.push(['Session.onConfig', function () { proxy.SNI.wait(function () { SNI.Omniture = {}; SNI.Omniture.pageType = FD.Config.MetaData.pageType; }); }]);
+proxy.FD.wait(function () { $(function () { log('...DOM Ready Gigya Events'); FD.subscribe('fd.session.loginVerified', function () { log('...login verified'); if (FD.Page.refreshOnLogin) { setTimeout(function () { FD.Page.loginRedirectUrl ? window.location = FD.Page.loginRedirectUrl : window.location.reload(); }, 200); } }), FD.subscribe('fd.session.logoutVerified', function () { log('...login verified'), setTimeout(function () { window.location.reload(); }, 200); }); }); });
+proxy.FD.push(['Session.onConfig', function() { SniAdsConfig.adSlots[0].mapping.small = [300,250]; SniAdsConfig.adSlots[0].mapping.medium = [300,250]; }]);
+proxy.FD.push(['Session.onConfig', function () { SniAds.init({ breakpoints: FD.viewports.getSniAdBreakpoints() }); }]);
+proxy.FD.push(['emit', 'gk.emit.welcomebanner', {headLabel: 'Welcome to Genius Kitchen: Dig into our',midLabel: '63 Top Pinterest Recipes',midLabelHref: 'http://www.food.com/ideas/popular-pinterest-recipes-6026?c=541097',tailLabel: 'and save room for dessert!',}]);
+
+</script>
+
+
+
+
+
+<!-- share modals >>> -->
+
+<div class="modal fade" id="share_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content share">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" data-clicktrack="true" rel="Share Modal"><span aria-hidden="true"><i class="icon-fdc-close"></i></span><span class="sr-only">Close</span></button>
+        <h6>Share this recipe:</h6>
+        <h4 class='modal-title'>{{title}}</h4>
+      </div>
+      <div class="modal-body">
+          <a class="list-group-item btn-round gk-share-link share-recipe pinterest" data-network="pinterest" href="#" data-recipe-id="" data-clicktrack="true" rel="Share Modal"><i class="icon-fdc-pinterest"></i><span class="sr-only">Pinterest</span></a>
+          <a class="list-group-item btn-round gk-share-link share-recipe facebook" data-network="facebook" href="#" data-recipe-id="" data-clicktrack="true" rel="Share Modal"><i class="icon-fdc-facebook"></i><span class="sr-only">Facebook</span></a>
+          <a class="list-group-item btn-round gk-share-link email-open email" data-popup-id="#email" data-recipe-id="" href="#" data-clicktrack="true" rel="Share Modal"><i class="icon-fdc-email"></i><span class="sr-only">Email</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal_no_results" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">No Results</h4>
+      </div>
+      <div class="modal-body">
+        Whoops! There are no results for your search<span class="your-search"></span>. Please modify your search and try again.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">Search Again</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop"></div>
+<!-- <<< share modals -->
+
+
+
+
+<!-- Saves Promo Modal  -->
+<div class="modal fade saves-promo-modal" id="modal_saves_promo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Hey There!</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Looking for one of your favorite recipes? You'll notice that Recipe Box is now called <b><a href="/saves">SAVES</a></b> and your recipes are organized in <b><a href="/saves/index.html#/?section=collections">COLLECTIONS</a></b>.
+                </p>
+                <p>
+                    Plus, all of your private notes can now be found directly on the recipe page under the directions.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Ok, Got It!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- New DFP Ad Slots -->
+<div id='dfp_utility1'></div>
+<div id='dfp_utility2'></div>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"1b55c6690d","agent":"","beacon":"bam.nr-data.net","applicationTime":8,"applicationID":"87870681","transactionName":"Y1FaN0tQXhBVUUJdW1obaxNLWF4Ed11YQEZbWFQGSx5YDFlXGFBbFBx\/Jm0Y","queueTime":0}</script>
+
+<!-- menus -->
+
+<div class="fd-menus">
+
+    <!-- SITE MENU -->
+    <section class="fd-menu fd-menu-site" id="gk-burger">
+        <div class="fd-menu-inner">
+            <div class="fd-menu-toolbar">
+                <button class="btn btn-transparent btn-sm fd-menu-close">
+                    <i class="icon-gk-arrow-left"></i>
+                    <span>back</span>
+                </button>
+            </div>
+
+            <div class="nav navbar-nav">
+                <dl class="nav-featured">
+                    
+                    <dt>This week on GK:</dt>
+                    
+                    <dd>
+                        <a href="https://www.geniuskitchen.com/ideas/all-time-best-dinner-recipes-6009" data-clicktrack="true">53 All-Time Favorite Dinners
+                        </a>
+                    </dd>
+                    
+                    <dd>
+                        <a href="https://www.geniuskitchen.com/ideas/five-ingredient-breakfast-recipes-6093" data-clicktrack="true">5-Ingredient Breakfast Ideas
+                        </a>
+                    </dd>
+                    
+                    <dd>
+                        <a href="https://www.geniuskitchen.com/sweepstakes/golden-noms-vote-6705" data-clicktrack="true">Enter For a Chance to Win $3K!
+                        </a>
+                    </dd>
+                    
+                </dl>
+            </div>
+
+            <div class="nav navbar-nav">
+                <dl class="nav-food-and-gk">
+                    
+
+                    
+
+                    <dd><a href="http://watch.geniuskitchen.com" data-clicktrack="true">WATCH FREE ON DEMAND
+                    </a></dd>
+                    
+
+                    <dd><a href="http://watch.geniuskitchen.com/shows/" data-clicktrack="true">SHOWS
+                    </a></dd>
+                    
+
+                    <dd><a href="http://www.geniuskitchen.com/recipe/" data-clicktrack="true">RECIPES
+                    </a></dd>
+                    
+
+                    <dd><a href="http://www.geniuskitchen.com/news" data-clicktrack="true">FOOD NEWS
+                    </a></dd>
+                    
+
+                    
+
+                    
+                    <dd><a href="https://www.geniuskitchen.com/ideas/family-and-kids-6435" data-clicktrack="true">BACK TO SCHOOL
+                    </a></dd>
+                    
+                    <dd><a href="https://www.geniuskitchen.com/ideas/copycat-recipes-6576" data-clicktrack="true">COPYCAT RECIPES
+                    </a></dd>
+                    
+                    <dd><a href="http://www.geniuskitchen.com/how-to/about-us-31" data-clicktrack="true">ABOUT US
+                    </a></dd>
+                    
+                </dl>
+            </div>
+            <div class="how-to-watch">
+                <div class="htw-inner">
+                    <a href="https://www.geniuskitchen.com/app" target="_blank">
+                        <h6>How to Watch our Shows</h6>
+                        
+<svg width="120px" height="37px" viewBox="0 0 120 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="burger-bar-XS-D" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-100.000000, -495.000000)">
+        <g id="new-v2.5.2" transform="translate(-2.000000, 0.000000)" fill-rule="nonzero">
+            <g id="Extended-Burger-Bar-Nav">
+                <g id="Main-Links" transform="translate(1.000000, 220.000000)">
+                    <g id="Watch-Link" transform="translate(67.000000, 243.000000)">
+                        <g id="device-icons" transform="translate(34.000000, 32.000000)">
+                            <g id="device-icons-compressed">
+                                <g id="television" transform="translate(35.729814, 0.000000)">
+                                    <path d="M2.06273515,30.207944 L52.1672375,30.207944 L52.1672375,1.43847352 L2.06273515,1.43847352 L2.06273515,30.207944 Z M0.931557812,31.6464175 C0.399239062,31.6464175 0,31.3039238 0,30.8929314 L0,0.753486131 C0,0.342493696 0.399239062,0 0.931557812,0 L53.231875,0 C53.7641937,0 54.1634328,0.342493696 54.1634328,0.753486131 L54.1634328,30.8929314 C54.1634328,31.3039238 53.7641937,31.6464175 53.231875,31.6464175 C53.231875,31.6464175 0.931557812,31.6464175 0.931557812,31.6464175 Z M30.8079476,32.1944074 L30.8079476,34.934357 L34.467639,34.934357 C34.8003382,34.934357 34.9999578,35.208352 34.9999578,35.4823469 L34.9999578,36.3728305 C34.9999578,36.6468255 34.7337984,36.9208204 34.467639,36.9208204 L19.163475,36.9208204 C18.8307758,36.9208204 18.6311562,36.6468255 18.6311562,36.3728305 L18.6311562,35.4823469 C18.6311562,35.208352 18.8973156,34.934357 19.163475,34.934357 L22.8231664,34.934357 L22.8231664,32.1944074 L30.8079476,32.1944074 Z" id="television-bezel_1_" fill="#FEFEFE"></path>
+                                    <polygon id="television-screen_1_" fill="#010202" points="1.99619531 30.1394453 52.1006976 30.1394453 52.1006976 1.36997478 1.99619531 1.36997478"></polygon>
+                                </g>
+                                <g id="laptop" transform="translate(0.297831, 9.762264)">
+                                    <path d="M0,25.1659475 L18.9643175,25.1659475 C19.2958615,25.1659475 19.3621703,25.1659475 19.4284792,25.2980522 C19.494788,25.3641046 19.5610968,25.4301569 19.6274056,25.4301569 L23.6722425,25.4301569 L27.7170795,25.4301569 C27.7833883,25.4301569 27.9160059,25.3641046 27.9160059,25.2980522 C27.9823147,25.2319999 28.0486235,25.1659475 28.3801675,25.1659475 L47.344485,25.1659475 C47.344485,26.2227852 46.4824706,27.0814658 45.4215298,27.0814658 L23.7385513,27.0814658 L1.98926408,27.0814658 C0.928323236,27.0154135 0,26.1567329 0,25.1659475 Z M4.84054259,24.6482128 L4.84054259,23.9876892 L4.84054259,1.91551831 L4.84054259,1.25499476 C4.84054259,0.858680624 5.1720866,0.46236649 5.50363061,0.46236649 L41.9071632,0.46236649 C42.305016,0.46236649 42.5702512,0.792628268 42.5702512,1.25499476 L42.5702512,1.91551831 L42.5702512,23.9876892 L42.5702512,24.6482128 L4.84054259,24.9017381 L4.84054259,24.6482128 Z" id="laptop-bezel_1_" fill="#FEFEFE"></path>
+                                    <polygon id="laptop-screen_1_" fill="#010202" points="5.90148343 23.7127957 41.5093104 23.7127957 41.5093104 2.31183245 5.90148343 2.31183245"></polygon>
+                                </g>
+                                <g id="tablet" transform="translate(82.820494, 7.075326)">
+                                    <path d="M1.87272133,27.1368848 L20.9744789,27.1368848 L20.9744789,2.64972949 L1.87272133,2.64972949 L1.87272133,27.1368848 Z M12.0790526,28.4160645 C12.0790526,28.7815444 11.7981444,29.0556544 11.4236001,29.0556544 C11.0490559,29.0556544 10.7681477,28.7815444 10.7681477,28.4160645 C10.7681477,28.0505846 11.0490559,27.7764746 11.4236001,27.7764746 C11.7981444,27.7764746 12.0790526,28.0505846 12.0790526,28.4160645 Z M22.5662921,28.6901745 L22.5662921,1.18780977 C22.5662921,0.639589876 22.0981117,0.182739965 21.5362953,0.182739965 L1.21726887,0.182739965 C0.655452467,0.182739965 0.187272133,0.639589876 0.187272133,1.18780977 L0.187272133,28.6901745 C0.187272133,29.2383944 0.655452467,29.6952443 1.21726887,29.6952443 L21.6299314,29.6952443 C22.0981117,29.6038743 22.5662921,29.1470244 22.5662921,28.6901745 Z" id="tablet-bezel_1_" fill="#FEFEFE"></path>
+                                    <polygon id="tablet-screen_1_" fill="#010202" points="1.87272133 27.1368848 20.9744789 27.1368848 20.9744789 2.64972949 1.87272133 2.64972949"></polygon>
+                                </g>
+                                <g id="phone" transform="translate(107.670807, 15.247394)">
+                                    <path d="M0.728314866,18.7407208 L0.728314866,3.28445623 L0.728314866,2.89804962 L11.028768,2.89804962 L11.028768,3.28445623 L11.028768,18.7407208 L11.028768,19.1271275 L0.728314866,19.1271275 L0.728314866,18.7407208 Z M4.68202414,1.83543142 C4.47393418,1.83543142 4.3698892,1.73882977 4.3698892,1.64222812 L4.3698892,1.54562646 C4.3698892,1.44902481 4.47393418,1.35242315 4.68202414,1.35242315 L7.28314866,1.35242315 C7.49123863,1.35242315 7.59528361,1.44902481 7.59528361,1.54562646 L7.59528361,1.64222812 C7.59528361,1.73882977 7.49123863,1.83543142 7.28314866,1.83543142 C7.28314866,1.83543142 4.68202414,1.83543142 4.68202414,1.83543142 Z M5.09820406,20.2863473 C5.09820406,19.8999407 5.41033901,19.6101357 5.82651893,19.6101357 C6.24269885,19.6101357 6.5548338,19.8999407 6.5548338,20.2863473 C6.5548338,20.7077877 6.24269885,20.9625589 5.82651893,20.9625589 C5.61842897,20.9625589 5.43635025,20.8901076 5.30629403,20.7693556 C5.1762378,20.6486035 5.09820406,20.4795506 5.09820406,20.2863473 Z M11.6530379,19.3203308 L11.6530379,2.31843969 L11.6530379,1.73882977 C11.6530379,1.35242315 11.4449479,0.966016539 11.2368579,0.676211577 C10.924723,0.386406615 10.5085431,0.289804962 10.0923631,0.289804962 L1.66471969,0.289804962 C1.24853977,0.289804962 0.832359847,0.483008269 0.520224905,0.676211577 C0.208089962,0.966016539 0.104044981,1.35242315 0.104044981,1.73882977 L0.104044981,2.31843969 L0.104044981,18.8821254 L0.104044981,19.9447436 C0.104044981,20.3311502 0.312134943,20.7175568 0.520224905,21.0073618 C0.832359847,21.2971668 1.18543466,21.3937684 1.66471969,21.3937684 L10.0923631,21.3937684 C10.5085431,21.3937684 10.924723,21.2005651 11.2368579,21.0073618 C11.5489929,20.7175568 11.6530379,20.3311502 11.6530379,19.9447436 C11.6530379,19.9447436 11.6530379,19.736606 11.6530379,19.3203308 Z" id="phone-bezel_1_" fill="#FEFEFE"></path>
+                                    <polygon id="phone-screen_1_" fill="#010202" points="11.028768 18.7407208 11.028768 3.28445623 11.028768 2.89804962 0.728314866 2.89804962 0.728314866 3.28445623 0.728314866 18.7407208 0.728314866 19.1271275 11.028768 19.1271275"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+
+                    </a>
+                </div>
+            </div>
+            <div class="nav navbar-nav">
+                <dl class="social-share">
+                    <dd>
+                        <a class="icon-gk-facebook" href="https://www.facebook.com/GeniusKitchen" target="_blank" data-clicktrack="true"></a>
+                    </dd>
+                    <dd>
+                        <a class="icon-gk-pinterest" href="https://www.pinterest.com/geniuskitchen" target="_blank" data-clicktrack="true"></a>
+                    </dd>
+                    <dd>
+                        <a class="icon-gk-twitter" href="https://twitter.com/GeniusKitchen" target="_blank" data-clicktrack="true"></a>
+                    </dd>
+                    <dd>
+                        <a class="icon-gk-instagram" href="https://www.instagram.com/geniuskitchen" target="_blank" data-clicktrack="true"></a>
+                    </dd>
+                    <dd>
+                        <a class="icon-gk-youtube" title="Youtube" href="https://www.youtube.com/geniuskitchen" target="_blank" data-clicktrack="true"></a>
+                    </dd>
+                    <dd>
+                        <a class="icon-gk-email" href="http://mynewsletters.scrippsnetworks.com/?mode=subscribe&nlbrand=gk&source=0000_FC_HEADER"></a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="nav navbar-nav">
+                <dl class="privacy">
+                    <dd>
+                        <a target="_blank" href="http://www.scrippsnetworksinteractive.com/privacy-policy/">Privacy Policy</a>
+                    </dd>
+                    <dd>
+                        <a target="_blank" href="http://geniuskitchen.custhelp.com/">Contact Us</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+    <!-- ./SITE MENU -->
+
+    <!-- USER MENU -->
+    <section class="fd-menu fd-menu-right" id="gk-menu-auth">
+        <div class="fd-menu-inner">
+            <div class="fd-menu-toolbar">
+                <button class="btn btn-transparent btn-sm fd-menu-close">
+                    <i class="icon-gk-arrow-left"></i>
+                    <span>back</span>
+                </button>
+            </div>
+            <div class="nav navbar-nav">
+                <dl class="nav-user">
+                    <dt class="fd-greet">
+                        <a href="https://www.geniuskitchen.com/user/">Hi, [user]</a>
+                    </dt>
+                    
+<dd><a href="https://www.geniuskitchen.com/user/">Profile</a></dd>
+<dd>
+<svg class="svg-sparkle" xmlns="http://www.w3.org/2000/svg" width="60" height="59.966" viewBox="0 0 60 59.9663"><defs><style>.cls-1{fill:#f4ce34}</style></defs><title></title><path id="left" class="cls-1 left" d="M21.224 3.201c-.355 2.874-.613 5.763-1.09 8.617-.567 3.396-1.326 6.76-1.986 10.142a5.768 5.768 0 0 1-3.837 4.647 60.835 60.835 0 0 1-8.265 1.974c-1.967.356-3.993.374-5.998.656a38.476 38.476 0 0 1 11.884 3.395c3.576 1.74 6.028 4.261 6.632 8.365.722 4.877 1.594 9.73 2.402 14.592a1.308 1.308 0 0 0 .576.96c.213-1.546.375-3.1.651-4.633.697-3.857 1.497-7.696 2.159-11.558a10.216 10.216 0 0 1 5.865-7.568 29.88 29.88 0 0 1 11.473-3.301 1.6 1.6 0 0 0 .994-.356c-2.121-.17-4.26-.232-6.363-.538a45.841 45.841 0 0 1-6.951-1.43 6.842 6.842 0 0 1-4.793-5.326A102.722 102.722 0 0 1 21.8 4.647c-.03-.503-.148-1.001-.226-1.5-.117.018-.235.035-.35.054"/><path id="right-bottom" class="cls-1 right-bottom" d="M40.808 34.928c-.459 2.577-.976 5.148-1.358 7.737-.341 2.32-1.836 3.355-3.935 3.767-1.329.26-2.68.401-4.472.662 1.374.33 2.355.519 3.308.807 2.88.871 4.895 2.516 5.301 5.715a28.988 28.988 0 0 0 1.485 6.28c.124-.885.24-1.772.375-2.654.08-.535.201-1.062.288-1.595.988-5.947 2.584-7.517 8.596-8.58-1.267-.191-2.533-.379-3.801-.574-2.54-.387-3.595-1.263-4.128-3.756-.465-2.172-.75-4.382-1.117-6.573-.073-.434-.164-.866-.246-1.296l-.295.06"/><path id="right-top" class="cls-1 right-top" d="M50.802 25.119c.32-1.74.736-3.47.941-5.221.627-5.349 3.462-6.568 7.578-7.278a4.067 4.067 0 0 0 .679-.285c-1.268-.195-2.337-.353-3.402-.53-3.069-.514-3.947-1.285-4.561-4.306-.495-2.43-.844-4.89-1.501-7.408-.106.45-.232.898-.312 1.356-.408 2.32-.82 4.641-1.202 6.964a3.455 3.455 0 0 1-2.726 2.949c-1.568.408-3.178.664-4.922 1.018 1.222.365 2.354.644 3.44 1.041 2.39.877 4.074 2.387 4.46 5.038.273 1.865.615 3.723.934 5.58.063.363.168.716.252 1.076z"/></svg>
+ <a href="https://www.geniuskitchen.com/saves">Saves</a></dd>
+<dd><a href="https://www.geniuskitchen.com/upload/recipe">Add a Recipe</a></dd>
+<dd><a href="https://www.geniuskitchen.com/user/settings">User Settings</a></dd>
+<dd><a class="sso-logout" href="https://www.geniuskitchen.com/logout-redirect?DEST_URL=">Log Out</a></dd>
+
+                </dl>
+            </div>
+        </div>
+    </section>
+    <!-- ./USER MENU -->
+
+    <!-- SEARCH MODULE -->
+        <section class="fd-menu" id="gk-menu-search">
+            <div class="fd-menu-inner">
+                <div class="search-panel">
+                    <div class="fd-menu-toolbar">
+                        <button class="btn btn-transparent btn-sm fd-menu-close">
+                            <i class="icon-gk-arrow-left"></i>
+                            <span>back</span>
+                        </button>
+                    </div>
+                    <div class="container search-box-spacer">
+                        <div class="search-box">
+                            <div class="search-box-wrap">
+                                <div class="search-label">
+                                    <label for="search-input">i want to make</label>
+                                </div>
+                                <div class="search-items-content search-box-content">
+                                    <div class="search-items search-box-items">
+                                        <ul class="search-items-list input-area">
+                                            <li class="inputItem">
+                                                <i class="icon-gk-search"></i>
+                                                <input type="text" id="search-input" placeholder="I want to make"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="search-tools">
+                                    <button type="button" class="search-box-clear" tabindex="-1">
+                                        <span>clear</span>
+                                        <i class="icon-gk-close" title="Clear All Items"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container search-menu-content">
+                        <div class="search-items-column">
+                            <div class="search-items-content search-filter-content hidden" id="search-filters" data-has-context="1" data-list-name="filter by">
+                                <div class="search-items search-filter-items">
+                                    <ul class="search-items-list search-filter-items-list"></ul>
+                                </div>
+                            </div>
+                            <div class="search-items-content search-suggest-content hidden" id="search-related" data-has-context="0" data-list-name="related searches">
+                                <div class="search-items search-suggest-items">
+                                    <ul class="search-items-list search-suggest-items-list"></ul>
+                                </div>
+                            </div>
+                            <div class="search-items-content search-previous-content hidden" id="search-previous" data-has-context="0" data-list-name="your-recent-searches">
+                                <div class="search-items search-previous-items">
+                                    <ul class="search-items-list search-previous-items-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-items-column">
+                            <div class="search-items-content search-recipe-content hidden" id="search-recipes" data-has-context="0" data-list-name="recently viewed">
+                                <div class="search-items search-recipe-items">
+                                    <ul class="search-items-list search-recipe-items-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-module-results">
+                    <header>
+                        <div class="search-results-heading container"></div>
+                    </header>
+                    <div class="gk-tile-content container-sm-md no-filter">
+                        <div class="search-results"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-autosuggest drop-list" style="display: none; ">
+                <ul class="search-suggest-list"></ul>
+            </div>
+        </section>
+
+    <!-- ./SEARCH MODULE -->
+
+    <!-- STICKY SHARE MODULE -->
+    <section class="fd-menu" id="sticky-share-module">
+        <div class="fd-menu-inner">
+            <div class="fd-share-tools global-share">
+                <a class="pinterest gk-share-link" href="" data-network="pinterest" data-clicktrack="true"><i class="icon-gk-pinterest"></i></a>
+                <a class="facebook gk-share-link" href="" data-network="facebook" data-clicktrack="true"><i class="icon-gk-facebook"></i></a>
+                <a class="email gk-share-link" href="mailto:?subject=&body=" data-network="email" data-popup-id="#email" title="Share via Email" data-clicktrack="true"><i
+                        class="icon-gk-email" title="Email"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- ./STICKY SHARE MODULE -->
+
+</div>
+
+<script type="text/html-template" class="autosuggest-template" id="autosuggestItem">
+    {{? !it.url }}
+    <li><span class="suggest-title">{{=it.title}}</span></li>
+    {{?}}
+    {{? it.url }}
+    <li class="autosuggest-asset {{=(it.hasLabel ? 'label' : '')}}" title="{{=it.title}}" data-record-type="{{=it.type}}" data-url="{{=it.url}}?ic1=suggestedAsset%7C{{=it.searchTerm}}">
+        <a href="{{=it.url}}?ic1=suggestedAsset%7C{{=it.searchTerm}}" tabindex="-1">
+            <span class="suggest-title">{{=it.title}}</span>
+            <div class="item-photo">
+                <div class="item-photo-wrap">
+                    <img src="{{=it.photoUrl || 'https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png'}}" alt="{{=it.title}}" data-crop-mode="fill" data-target=".item-photo"/>
+                </div>
+            </div>
+        </a>
+    </li>
+    {{?}}
+</script>
+
+<!-- ./menus -->
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/html-template" class="tile-template" id="tile-asset">
+
+    <div class="gk-tile {{=it.type}} {{=it.cssClassNames}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="gk-tile-inner">
+        {{? it.topRibbonText }}
+            <div class="gk-tile-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+        {{? it.sponsor }}
+            <div class="sponsored" style="display: none;">
+                <span class="sr-only">Sponsored by {{=it.sponsor}}</span>
+                {{=it.sponsor}}
+            </div>
+        {{?}}
+            <div class="gk-img">
+                {{? it.photoUrl }}
+                    <div class="gk-img-wrap">
+                        <a href="{{=it.url}}">
+                            <img src="{{=it.photoUrl}}"/>
+                        </a>
+                    </div>
+                {{?}}
+            </div>
+            <div class="gk-tile-content">
+            {{? it.hasTag }}
+                <div class="gk-tile-tag">
+                {{? it.label }}
+                    <label>{{=it.label}}</label>
+                {{?}}
+                {{? it.userAvatarUrl && it.userProfileUrl && it.displayName }}
+                    <span class="gk-avatar">
+                        <a href="{{=it.userProfileUrl}}"><img src="{{=it.userAvatarUrl}}" alt="{{=it.displayName}}"/></a>
+                    </span>
+                {{?}}
+                </div>
+            {{?}}
+                <div class="gk-tile-details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                {{? it.publishDate }}
+                    <label>{{=it.publishDate}}</label>
+                {{?}}
+                {{? it.type == 'recipe' }}
+                    <div class="gk-tile-recipe-info">
+                        <div class="author">
+                        {{? it.userProfileUrl }}
+                            <span class="name">By <a href="{{=it.userProfileUrl}}">{{=it.displayName}}</a></span>
+                        {{??}}
+                            <span class="name">By {{=it.displayName}}</span>
+                        {{?}}
+                        </div>
+                        <div class="meta-data">
+                            <div class="fd-rating">
+                                <div class="five-star">
+                                    <span class="fd-rating-percent" style="width:{{=it.percentRating}};"></span>
+                                </div>
+                                <span title="{{=it.ratingCount}}">({{=it.ratingCountAbbr}})</span>
+                            </div>
+                            <div class="cook-time"><i class='icon-fdc-clock'></i> {{=it.totalTime}}</div>
+                        </div>
+                    </div>
+                {{?}}
+                </div>
+            </div>
+            {{? it.isShareable }}
+            <div class="tools">
+                <a class="icon-fdc-share" data-recipe-id="{{=it.id}}" data-record-spec="{{=it.recordSpec}}" data-target="#share_modal" data-toggle="modal" title="Share"></a>
+            </div>
+            {{?}}
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-recipe">
+
+    <div class="fd-tile fd-recipe {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                {{? it.photoUrl }}
+                    <div class="inner-wrapper">
+                        <a href="{{=it.url}}">
+                            <img src="{{=it.photoUrl}}"/>
+                        </a>
+                    </div>
+                {{?}}
+            </div>
+            <div class="tile-content">
+                <div class="details">
+                        <span class="avatar">
+                            <a href="{{=it.userProfileUrl}}"><img src="{{=it.userAvatarUrl}}" alt="{{=it.displayName}}"/></a>
+                        </span>
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                    <div class="recipe-data">
+                        <div class="author">
+                        {{? it.userProfileUrl }}
+                            <span class="name">By <a href="{{=it.userProfileUrl}}">{{=it.displayName}}</a></span>
+                        {{??}}
+                            <span class="name">By {{=it.displayName}}</span>
+                        {{?}}
+                        </div>
+                        <div class="meta-data">
+                            <div class="fd-rating">
+                                <div class="five-star">
+                                    <span class="fd-rating-percent" style="width:{{=it.percentRating}};"></span>
+                                </div>
+                                <span title="{{=it.ratingCount}}">({{=it.ratingCountAbbr}})</span>
+                            </div>
+                            <div class="cook-time"><i class='icon-fdc-clock'></i> {{=it.totalTime}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tools">
+                <a class="icon-fdc-share" data-recipe-id="{{=it.id}}" data-record-spec="{{=it.recordSpec}}" data-target="#share_modal" data-toggle="modal" title="Share"></a>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-topic">
+
+    <div class="fd-tile fd-topic {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                {{? it.photoUrl }}
+                <div class="inner-wrapper">
+                    <img src="{{=it.photoUrl}}" alt="{{=it.title}}">
+                </div>
+                {{?}}
+            </div>
+
+            <div class="tile-content">
+                <div class="tags">
+                    <span>{{=it.label}}</span>
+                </div>
+                <div class="details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                </div>
+            </div>
+            <ul class="related-links">
+                <li><a href="{{=it.itemUrl}}">{{=it.itemText}}</a></li>
+            </ul>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-gkshow">
+
+    <div class="fd-tile fd-topic {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                {{? it.photoUrl }}
+                <div class="inner-wrapper">
+                    <img src="{{=it.photoUrl}}" alt="{{=it.title}}">
+                </div>
+                {{?}}
+            </div>
+
+            <div class="tile-content">
+                <div class="tags">
+                    <span>{{=it.label}}</span>
+                </div>
+                <div class="details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                </div>
+            </div>
+            <ul class="related-links">
+                <li><a href="{{=it.itemUrl}}">{{=it.itemText}}</a></li>
+            </ul>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-gkcollection">
+
+    <div class="fd-tile fd-video {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+            {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+            {{?}}
+            <div class="sponsored" style="display: none;">
+                <span class="sr-only">Sponsored by {{=it.sponsor}}</span>
+                {{=it.sponsor}}
+            </div>
+            <div class="fd-img-wrap">
+                <div class="inner-wrapper">
+                    <img src="{{=it.photoUrl}}" alt="{{=it.title}}">
+                </div>
+            </div>
+            <div class="tile-content {{? !it.showName }}no-show-name{{?}}">
+                <label><i class="icon-fdc-play"></i></label>
+                <div class="details">
+                {{? it.showName }}
+                    <label>{{=it.showName}}</label>
+                {{?}}
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                    <div class="author">
+                        <span class="name">By <a href="https://www.geniuskitchen.com/user/{{=it.userId}}">{{=it.displayName}}</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-list">
+
+    <div class="fd-tile fd-list {{=it.cssClassNames || ''}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="tile-content">
+                <div class="details">
+                    <h2 class="title"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                </div>
+            </div>
+            <ul class="topics related-links">
+                <li><a href="{{=it.itemUrl}}">{{=it.itemText}}</a></li>
+            </ul>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-photo">
+
+    <div class="fd-tile fd-photo {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                <div class="inner-wrapper">
+                    <img src="{{=it.photoUrl}}" alt="{{=it.title}}">
+                </div>
+            </div>
+            <div class="tile-content">
+                <div class="details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-review">
+
+    <article itemprop="review" itemscope itemtype="http://schema.org/Review">
+        <h5><a href="{{=it.url}}">{{=it.title}}</a></h5>
+        <div class="fd-rating">
+            <div class="five-star">
+                <span class="fd-rating-percent" style="width: {{=it.rating}}"></span>
+
+                <p style="display: none;" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                    <meta itemprop="worstRating" content="1"/>
+                    <span itemprop="ratingValue" style="display:none"></span>
+                    <span itemprop="bestRating" style="display:none">5</span>
+                </p>
+
+            </div>
+        </div>
+        <small class="date">{{=it.date}}</small>
+        <p itemprop="description">{{=it.review}}</p>
+    </article>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-slideshow">
+
+    <div class="fd-tile fd-gallery {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                <div class="inner-wrapper">
+                    <img src="{{=it.photoUrl}}">
+                </div>
+            </div>
+            <div class="tile-content">
+                {{? it.label }}
+                <div class="tags">
+                    <span>{{=it.label}}</span>
+                </div>
+                {{?}}
+                <div class="details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-video">
+
+    <div class="fd-tile fd-video {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="sponsored" style="display: none;">
+                <span class="sr-only">Sponsored by {{=it.sponsor}}</span>
+                {{=it.sponsor}}
+            </div>
+            <div class="fd-img-wrap">
+                <div class="inner-wrapper">
+                    {{? it.isFeature === true }}
+                        <img data-src="{{=it.initialPhotoUrl}}" data-target=".fd-img-wrap" alt="{{=it.title}}">
+                    {{?}}
+                    {{? it.isFeature != true }}
+                        <img src="{{=it.photoUrl}}" alt="{{=it.title}}">
+                    {{?}}
+                </div>
+            </div>
+            <div class="tile-content">
+                <label><i class="icon-fdc-play"></i></label>
+                <div class="details">
+                {{? it.showName }}
+                    <label>{{=it.showName}}</label>
+                {{?}}
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                    <div class="author">
+                        <span class="name">By <a href="https://www.geniuskitchen.com/user/{{=it.userId}}">{{=it.displayName}}</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+
+
+<script type="text/html-template" class="tile-template" id="tile-ingredient">
+
+    <div class="fd-tile fd-ingredient {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                <div class="inner-wrapper">
+                    <img src="{{=it.photoUrl}}" alt="{{=it.title}}">
+                </div>
+            </div>
+            <div class="tile-content">
+                <div class="tags">
+                    <span>{{=it.label}}</span>
+                </div>
+                <div class="details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-user">
+
+    <div class="fd-tile fd-user {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap"></div>
+            <div class="tile-content">
+                <div class="author">
+                    <a href="{{= it.url}}"><span class="avatar"><img src="{{= it.userAvatarUrl}}"></span></a>
+                    <span class="name"><a href="{{= it.url}}" title="{{=FD.Page.htmlEncode(it.displayName, true)}}">{{= it.displayName}}</a></span>
+                </div>
+                <div class="gk-tile-actions">
+                    <button class="gk-fp-cta btn-default" data-url="#">Follow</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template tmpl-metadata" id="tile-metadata">
+    <span class="asset-count ">{{=it.itemCount}} {{=it.itemType}}</span>
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-howto">
+
+    <div class="fd-tile fd-how-to {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                <div class="inner-wrapper">
+                    <a href="{{=it.url}}"><img src="{{=it.photoUrl}}"></a>
+                </div>
+            </div>
+            <div class="tile-content">
+                <div class="tags">
+                    <span>{{=it.label}}</span>
+                </div>
+                <div class="details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-article">
+
+    <div class="fd-tile fd-article {{=it.cssClassNames || ''}} {{=it.noPhoto}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                <div class="inner-wrapper">
+                    <a href="{{=it.url}}"><img src="{{=it.photoUrl}}"></a>
+                </div>
+            </div>
+            <div class="tile-content">
+                <div class="tags">
+                    <span>{{=it.label}}</span>
+                </div>
+                <div class="details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                {{? it.publishDate }}
+                    <label>{{=it.publishDate}}</label>
+                {{?}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-rb-recipe">
+
+    <div class="fd-tile fd-recipe {{=it.cssClassNames || ''}} {{=it.noPhoto}} {{=it.noUser}}" data-id="{{=it.type}}-{{=it.id}}" data-url="{{=it.url}}">
+        <div class="fd-inner-tile">
+        {{? it.topRibbonText }}
+            <div class="gk-card-ribbon">
+                <div class="rib-text">{{=it.topRibbonText}}</div>
+                <div class="rib-tail"></div>
+            </div>
+        {{?}}
+            <div class="fd-img-wrap">
+                <div class="inner-wrapper">
+                    <a href="{{=it.url}}"><img src="{{=it.photoUrl}}" alt="{{=it.title}}"/></a>
+                </div>
+            </div>
+            <div class="tile-content">
+                <div class="details">
+                    <h2 class="title" title="{{=FD.Page.htmlEncode(it.title, true)}}"><a href="{{=it.url}}">{{=it.titleTruncated}}</a></h2>
+                    <div class="author">
+                            <span class="avatar">
+                                <a href="{{=it.userProfileUrl}}"><img src="{{=it.userAvatarUrl}}" alt="{{=it.displayName}}"/></a>
+                            </span>
+                        <span class="name">By <a href="{{=it.userProfileUrl}}">{{=it.displayName}}</a></span>
+                    </div>
+                    <div class="authorNoLink"><span class="name">By {{=it.displayName}}</span></div>
+                </div>
+            </div>
+            <div class="tools">
+                <a class="icon-fdc-share" data-recipe-id="{{=it.id}}" data-message="" data-title="{{=FD.Page.htmlEncode(it.title, true)}}" data-image="{{=it.photoUrl}}" data-url="{{=it.url}}"
+                   data-target="#share_modal" data-toggle="modal" title="Share"></a>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template module-gk-aa" id="tile-message">
+
+    <div class="tile-message clearfix {{=it.cssClassNames || ''}} {{=it.type || '' }}"{{? !!it.extraStyles }} style="{{=it.extraStyles}}"{{?}}>
+        <div class="details">
+        {{? !!it.title }}
+            <h2 class="title">{{=it.text}}</h2>
+        {{?}}
+        {{? !!it.description }}
+            <p class="description">{{=it.description}}</p>
+        {{?}}
+        {{? !!it.iconClass }}
+            <div class="cta">
+                <i class="{{=it.iconClass}}"></i>
+            </div>
+        {{?}}
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html-template" class="tile-template" id="tile-ad">
+    {{? !it }}{{ it = {} }}{{?}}
+    <div class="fd-tile fd-tile-double {{= it && it.cssClassNames || ''}} fd-tile-ad">
+        <div class="fd-inner-tile">
+            <div class="dfp-bigbox {{= it.className || ''}}">
+                <div class="dfp-ad-wrap">
+                    <div class="dfp" data-dfp-type="dfp_bigbox{{? it.noTower}}_alt{{?}}"></div>
+                    <span class="ad-label">Advertisement</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<!-- Search results heading template -->
+<script type="text/html-template" class="search-template" id="results-heading">
+    {{? !it }}{{ it = {} }}{{?}}
+    {{? it.noResults }}
+        <h3>Oops!</h3>
+        <h2 id="searchModuleTitle">No matches.</h2>
+        <p>How about digging into some of our most popular stuff instead?</p>
+    {{??}}
+        <h1 id="searchModuleTitle">{{= it.count}} Result{{? it.count.replace( /,/g , "" ) > 1}}s{{?}}</h1>
+    {{?}}
+</script>
+
+<!-- Search term template -->
+<script type="text/html-template" class="search-template" id="term">
+    <li><span>{{=it.title}}</span><i class="icon-fdc-close"></i></li>
+</script>
+
+<!-- Search token template -->
+<script type="text/html-template" class="search-template" id="token">
+    <li data-context="{{=it.data}}"><span>{{=it.title}}</span></li>
+</script>
+
+<!-- Search "did you mean" template -->
+<script type="text/html-template" class="search-template" id="dym">
+    <div class="dym"><div class="dym-wrap">{{=it.msg}}</div></div>
+</script>
+
+
+
+<script type="text/html-template" class="global-share-template" id="global-share-tools">
+    {{? !it }}{{ it = { pinterest: true, facebook: true, email: true } }}{{?}}
+    <!-- GK share tools -->
+    <div class="gk-share social-share">
+        <div class="gk-share-wrapper">
+            <div class="gk-share-inner">
+                <ul>
+                {{? it.pinterest }}
+                    <li class="pinterest">
+                        <a class="gk-share-link pinterest" data-network="pinterest" title="Share on Pinterest" {{? it.pinterest.shareDataFunc }}data-share-data-func="{{=it.pinterest.shareDataFunc}}"{{?}}><i class="icon-fdc-pinterest social-share"></i></a>
+                    </li>
+                {{?}}
+                {{? it.facebook }}
+                    <li class=" facebook">
+                        <a class="gk-share-link facebook" data-network="facebook" title="Share on Facebook" {{? it.facebook.shareDataFunc }}data-share-data-func="{{=it.facebook.shareDataFunc}}"{{?}}><i class="icon-fdc-facebook"></i></a>
+                    </li>
+                {{?}}
+                {{? it.twitter }}
+                    <li class=" twitter">
+                        <a class="gk-share-link twitter" data-network="twitter" title="Share on Twitter" {{? it.twitter.shareDataFunc }}data-share-data-func="{{=it.twitter.shareDataFunc}}"{{?}}><i class="icon-fdc-twitter"></i></a>
+                    </li>
+                {{?}}
+                 {{? it.instagram }}
+                    <li class=" instagram">
+                        <a class="gk-share-link instagram" data-network="instagram" title="Share on Instagram" {{? it.instagram.shareDataFunc }}data-share-data-func="{{=it.instagram.shareDataFunc}}"{{?}}><i class="icon-fdc-instagram"></i></a>
+                    </li>
+                {{?}}
+                {{? it.email }}
+                    <li>
+                        <a class="gk-share-link email" data-network="email" title="Share via Email" {{? it.email.shareDataFunc }}data-share-data-func="{{=it.email.shareDataFunc}}"{{?}}><i class="icon-fdc-email"></i></a>
+                    </li>
+                {{?}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /GK share tools -->
+</script>
+
+<script type="text/html-template" id="tile-reciperelatedvideo">
+    <div class="gk-card">
+        <a href="{{=it.url}}">
+            <div class="gk-card-img">
+                <div class="inner-wrapper">
+                    <img data-src="{{=it.photo}}"
+                         data-target=".gk-card-img"
+                         alt="">
+                </div>
+            </div>
+            <div class="gk-card-text">
+                <span><i class="icon-fdc-play"></i></span>
+                <div class="text-wrap">
+                    <h5>{{=it.title}}</h5>
+                    <div class="duration">({{=it.duration}})</div>
+                </div>
+            </div>
+        </a>
+    </div>
+</script>
+
+
+
+
+<script type="text/html-template" class="module-gk-aa" id="gk-bigbox">
+{{? !it }}{{ it = {} }}{{?}}
+<div class="dfp-bigbox {{= it.className || ''}}">
+    <div class="dfp-ad-wrap">
+        <div class="dfp" data-dfp-type="dfp_bigbox{{? it.noTower}}_alt{{?}}"></div>
+        <span class="ad-label">Advertisement</span>
+    </div>
+</div>
+</script>
+
+
+
+
+
+<script type="text/html-template" class="tmpl-promo-card" id="gk-promo-card-tmpl">
+    
+<section class="gk-promo-card">
+    <div class="gk-promo-card-header">
+        
+<svg id="device-icons-wrapper" class="gk-device-icons" xmlns="http://www.w3.org/2000/svg" width="207.5996" height="54.808" viewBox="0 0 207.5996 54.808">
+    <g id="outlines" style="opacity: 1">
+        <path d="M206.6,57.75h-8.1a2.24,2.24,0,0,1-1.6309-.6211l-.0928-.1133A2.7521,2.7521,0,0,1,196.25,55.5V37.2a2.2449,2.2449,0,0,1,.62-1.6309l.1152-.0947A2.7687,2.7687,0,0,1,198.5,34.95h8.1a2.0922,2.0922,0,0,1,1.7246.7334A2.7634,2.7634,0,0,1,208.85,37.2V55.5a2.242,2.242,0,0,1-.6191,1.63l-.1143.0938A2.7524,2.7524,0,0,1,206.6,57.75Z" transform="translate(-1.25 -3.25)"/>
+        <path d="M186.7,57.75H164.9A1.8524,1.8524,0,0,1,163.05,55.9V26.8A1.8524,1.8524,0,0,1,164.9,24.95h21.8a1.8522,1.8522,0,0,1,1.85,1.85V55.9A1.8522,1.8522,0,0,1,186.7,57.75Z" transform="translate(-1.25 -3.25)"/>
+        <path d="M150.95,54.45H92.55V18.9a1.9321,1.9321,0,0,1,1.75-1.95h54.9a1.7972,1.7972,0,0,1,1.75,1.95Z" transform="translate(-1.25 -3.25)"/>
+        <path d="M82,49.95H3.4A1.9952,1.9952,0,0,1,1.25,48.1V5.1A1.9951,1.9951,0,0,1,3.4,3.25H82A1.9951,1.9951,0,0,1,84.15,5.1v43A1.9952,1.9952,0,0,1,82,49.95Z" transform="translate(-1.25 -3.25)"/>
+    </g>
+    <g id="device-icons">
+        <g id="television">
+            <path id="television-bezel" d="M5.1,48.14H80.4v-42H5.1Zm-1.7,2.1A1.2657,1.2657,0,0,1,2,49.14v-44a1.2657,1.2657,0,0,1,1.4-1.1H82a1.2657,1.2657,0,0,1,1.4,1.1v44a1.2657,1.2657,0,0,1-1.4,1.1Zm44.9.8v4h5.5a.7887.7887,0,0,1,.8.8v1.3a.86.86,0,0,1-.8.8h-23a.7887.7887,0,0,1-.8-.8v-1.3a.86.86,0,0,1,.8-.8h5.5v-4Z" transform="translate(-1.25 -3.25)" style="fill: #fefefe"/>
+            <polygon id="television-screen" points="3.75 44.79 79.05 44.79 79.05 2.79 3.75 2.79 3.75 44.79" style="fill: #010202"/>
+        </g>
+        <g id="laptop">
+            <path id="laptop-bezel" d="M86,55.14h28.6c.5,0,.6,0,.7.2.1.1.2.2.3.2h12.2c.1,0,.3-.1.3-.2.1-.1.2-.2.7-.2h28.6a2.9021,2.9021,0,0,1-2.9,2.9H89A3.1344,3.1344,0,0,1,86,55.14Zm7.3-.4V18.94a1.1991,1.1991,0,0,1,1-1.2h54.9c.6,0,1,.5,1,1.2v35.8Z" transform="translate(-1.25 -3.25)" style="fill: #fefefe"/>
+            <polygon id="laptop-screen" points="93.65 49.69 147.35 49.69 147.35 17.29 93.65 17.29 93.65 49.69" style="fill: #010202"/>
+        </g>
+        <g id="tablet">
+            <path id="tablet-bezel" d="M165.6257,55.258h20.4v-26.8h-20.4Zm10.9,1.4a.7.7,0,1,1-.7-.7.6835.6835,0,0,1,.7.7Zm11.2.3v-30.1a1.11,1.11,0,0,0-1.1-1.1h-21.7a1.11,1.11,0,0,0-1.1,1.1v30.1a1.11,1.11,0,0,0,1.1,1.1h21.8a1.2722,1.2722,0,0,0,1-1.1Z" transform="translate(-1.25 -3.25)" style="fill: #fefefe"/>
+            <polygon id="tablet-screen" points="164.376 52.008 184.776 52.008 184.776 25.208 164.376 25.208 164.376 52.008" style="fill: #010202"/>
+        </g>
+        <g id="phone">
+            <path id="phone-bezel" d="M197.6182,54.7636v-16.4h9.9v16.8h-9.9Zm3.8-17.5c-.2,0-.3-.1-.3-.2v-.1c0-.1.1-.2.3-.2h2.5c.2,0,.3.1.3.2v.1c0,.1-.1.2-.3.2Zm1.1,20a.7.7,0,1,1,.7-.7c.1.4-.3.7-.7.7Zm5.6-.8v-19.3a2.0969,2.0969,0,0,0-.4-1.1,1.5039,1.5039,0,0,0-1.1-.4h-8.1a2.0969,2.0969,0,0,0-1.1.4,1.5039,1.5039,0,0,0-.4,1.1v19.3a2.0969,2.0969,0,0,0,.4,1.1,1.5039,1.5039,0,0,0,1.1.4h8.1a2.097,2.097,0,0,0,1.1-.4,1.5039,1.5039,0,0,0,.4-1.1Z" transform="translate(-1.25 -3.25)" style="fill: #fefefe"/>
+            <polygon id="phone-screen" points="206.268 51.514 206.268 35.514 206.268 35.114 196.368 35.114 196.368 35.514 196.368 51.514 196.368 51.914 206.268 51.914 206.268 51.514" style="fill: #010202"/>
+        </g>
+    </g>
+</svg>
+
+    </div>
+    <div class="gk-promo-card-content">
+        <i class="icon-gk-sparkles top-left"></i>
+        <h3>get the genius kitchen app.</h3>
+        <p>Watch on your iPhone, iPad,  Apple TV, Android, Roku, or Fire TV.</p>
+        <a class="btn gk-promo-card-cta" href="/app" target="_blank">Learn More</a>
+        <i class="icon-gk-sparkles bottom-right"></i>
+    </div>
+</section>
+</script>
+
+<!-- /footer -->
+
+
+</body>
+</html>
